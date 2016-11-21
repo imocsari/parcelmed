@@ -1,19 +1,17 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
+    <%= image_tag "logo-parcelmed.png" %>
   <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <!-- Search form -->
-    <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
+  <!-- Home Button -->
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <i class="fa fa-home fa-2x"></i>
+  <% end %>
+
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
@@ -25,6 +23,8 @@
           <div class="badge badge-blue">3</div>
         </div>
       <% end %>
+
+
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
@@ -52,13 +52,31 @@
 
     <% else %>
 
-      <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
-    <% end %>
+
+      <!-- Login text link -->
+  <div class="navbar-wagon-item">
+    <div class="dropdown">
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item dropdown-toggle" %>
+  </div>
+    </div>
+
+      <!-- Sign up text link -->
+
+      <div class="navbar-wagon-item">
+         <div class="dropdown">
+
+           <%= link_to t(".top_call_to_action", default: "Sign up"), new_user_registration_path, class: "navbar-wagon-item dropdown-toggle"%>
+
+
+          <% end %>
+          </div>
+    </div>
+
+
 
     <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
@@ -66,9 +84,8 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item dropdown-toggle" %></li>
+        <li> <%= link_to t(".top_call_to_action", default: "Sign up"), new_user_registration_path, class: "navbar-wagon-item dropdown-toggle"%> </li>
       </ul>
     </div>
   </div>
