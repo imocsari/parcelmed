@@ -5,10 +5,11 @@ gem 'rails', '5.0.0.1'
 gem 'puma'
 gem 'pg'
 gem 'figaro'
-
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'redis'
+gem "geocoder"
+gem "gmaps4rails"
 
 gem 'sass-rails'
 gem 'jquery-rails'
