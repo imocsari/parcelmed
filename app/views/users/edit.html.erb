@@ -1,0 +1,12 @@
+<%= form_for(@user) do |f| %>
+  <%= f.label :company_name, "Enter a company name:" %>
+  <%= f.text_field :company_name %>
+  <%= f.label :company_department, "Enter the department:" %>
+  <%= f.text_field :company_department %>
+  <%= f.label :contact_person, "Enter a contact person:" %>
+  <%= f.text_field :contact_person %>
+  <%= f.label :contact_number, "Enter a contact number:" %>
+  <%= f.text_field :contact_number %>
+
+  <%= f.submit %>
+<% end %>
