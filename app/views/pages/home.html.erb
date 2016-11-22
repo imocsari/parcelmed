@@ -52,7 +52,9 @@
             </div>
           </div>
             <div style="text-align:center;">
-              <button type="button" class="btn">Get Quote and Book</button>
+              <form  class="form-inline" action="/bookings" >
+                <input type="submit" class="btn" value="Get Quote and Book"></button>
+              </form>
             </div>
         </form>
       </div>
@@ -183,6 +185,7 @@
       </div>
      </div>
  </div>
+
 
  <% content_for (:after_js) do %>
 <script type="text/javascript">

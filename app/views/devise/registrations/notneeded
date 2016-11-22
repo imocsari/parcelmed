@@ -1,0 +1,17 @@
+
+
+ <!---Additonal sign up field not required right now -->
+  <!--  <%= f.text_field :company_name, :placeholder => 'Company Name' %> -->
+    <%= f.text_field :company_address, :autofocus => true, :placeholder => 'Company Address' %>
+    <%= f.text_field :company_department, :autofocus => true, :placeholder => 'Company Department' %>
+    <%= f.text_field :contact_person, :autofocus => true, :placeholder => 'Contact Name' %>
+    <%= f.text_field :contact_number, :autofocus => true, :placeholder => 'Contact Number' %>
+
+
+margin: 0 auto 40px; in the sign up application.scss
+
+Sign in new.html.erb
+
+ <% if devise_mapping.rememberable? -%>
+      <label class="checkbox"> <%= f.label :remember_me %> </label>
+      <% end % >
