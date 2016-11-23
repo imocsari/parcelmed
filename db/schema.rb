@@ -31,34 +31,38 @@ ActiveRecord::Schema.define(version: 20161123093507) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "user_id"
+    t.integer  "courier_id"
     t.integer  "status"
-    t.datetime "pick_up_date_time"
-    t.datetime "destination_date_time"
-    t.float    "temperature"
-    t.float    "weight"
-    t.integer  "dimensions"
-    t.string   "material_type"
-    t.boolean  "additional_packaging_required"
+    t.float    "unit_price"
     t.integer  "quantity"
-    t.string   "pick_up_address"
-    t.string   "destination_address"
+    t.boolean  "extra_packaging"
+    t.string   "pick_up_contact_address"
+    t.string   "destination_contact_address"
+    t.string   "pick_up_contact_name"
+    t.string   "destination_contact_name"
+    t.string   "pick_up_contact_email"
+    t.string   "destination_contact_email"
+    t.string   "pick_up_contact_phone"
+    t.string   "destination_contact_phone"
     t.string   "special_requirements"
     t.boolean  "hazardous_material"
-    t.boolean  "terms_and_conditions"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.index ["courier_id"], name: "index_bookings_on_courier_id", using: :btree
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
 
   create_table "couriers", force: :cascade do |t|
-    t.integer  "booking_id"
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "price"
-    t.boolean  "availability"
-    t.index ["booking_id"], name: "index_couriers_on_booking_id", using: :btree
+    t.float    "temperature"
+    t.float    "weight"
+    t.integer  "dimensions"
+    t.boolean  "tomorrow"
+    t.boolean  "same_day"
+    t.float    "price"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -84,6 +88,6 @@ ActiveRecord::Schema.define(version: 20161123093507) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "bookings", "couriers"
   add_foreign_key "bookings", "users"
-  add_foreign_key "couriers", "bookings"
 end
