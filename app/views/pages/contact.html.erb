@@ -1,29 +1,30 @@
-<header>
-	<h1>Contact us</h1>
-</header>
-
-<div id="form">
-
-<div class="fish" id="fish"></div>
-<div class="fish" id="fish2"></div>
-
-<form id="waterform" method="post">
-
-<div class="formgroup" id="name-form">
-    <label for="name">Your name*</label>
-    <input type="text" id="name" name="name" />
-</div>
-
-<div class="formgroup" id="email-form">
-    <label for="email">Your e-mail*</label>
-    <input type="email" id="email" name="email" />
-</div>
-
-<div class="formgroup" id="message-form">
-    <label for="message">Your message</label>
-    <textarea id="message" name="message"></textarea>
-</div>
-
-	<input type="submit" value="Send your message!" />
-</form>
-</div>
+  <body>
+    <div class="bannercontact" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.8) 50%), url('contact.jpg');">
+      <div class="banner-content">
+      </div>
+      <div class="contactform">
+        <form id="contact" action="" method="post">
+          <h3>Contact</h3>
+          <h4>Contact us today, and get reply with in 24 hours!</h4>
+          <fieldset>
+            <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Company name" type="text" tabindex="4" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Your Email Address" type="email" tabindex="2" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Your Phone Number" type="tel" tabindex="3" required>
+          </fieldset>
+          <fieldset>
+            <textarea placeholder="Type your Message Here...." tabindex="5" required></textarea>
+          </fieldset>
+          <fieldset>
+            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </body>
