@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121161922) do
+ActiveRecord::Schema.define(version: 20161123093507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_admin_comments", force: :cascade do |t|
+    t.string   "namespace"
+    t.text     "body"
+    t.string   "resource_id",   null: false
+    t.string   "resource_type", null: false
+    t.string   "author_type"
+    t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "user_id"
@@ -34,6 +48,17 @@ ActiveRecord::Schema.define(version: 20161121161922) do
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
+  end
+
+  create_table "couriers", force: :cascade do |t|
+    t.integer  "booking_id"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "price"
+    t.boolean  "availability"
+    t.index ["booking_id"], name: "index_couriers_on_booking_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,4 +85,5 @@ ActiveRecord::Schema.define(version: 20161121161922) do
   end
 
   add_foreign_key "bookings", "users"
+  add_foreign_key "couriers", "bookings"
 end
