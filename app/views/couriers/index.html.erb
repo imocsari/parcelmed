@@ -7,9 +7,9 @@
   <div class="quote1">
             Add Your Specification
   </div>
-    <div class="wrapper-grey">
-        <div class="container">
-          <div class="row">
+    <div class="wrapper-border">
+        <div class="container-A">
+
             <div class="span12">
             <div class="other-style">
               <form method="get" action="/" class="form-inline" >
@@ -20,7 +20,7 @@
                   </div>
                   <div class="form-group">
                   <p><label for="Dimension" class="">Dimension</label></p>
-                  <p><input class="span5" id="Dimension" type="text"  placeholder="in kg" ></p>
+                  <p><input class="span5" id="Dimension" type="text"  placeholder="in Volume" ></p>
                   </div>
 
                   <div class="form-group">
@@ -36,73 +36,49 @@
 
 
 
-                  <script type="text/javascript" language="JavaScript">
-                  function HidePart(d) { document.getElementById(d).style.display = "none";  }
-                  function ShowPart(d) { document.getElementById(d).style.display = "block"; }
-                  function CheckboxChecked(b,d)
-                  {
-                     if(b) { ShowPart(d); }
-                     else  { HidePart(d); }
-                  }
-                  </script>
-
-
-                  <form
-                     name="myform"
-                     method="GET"
-                     action="http://willmaster.com">
-
                   <p>
                   <input
                      type="checkbox"
                      name="mycheckbox"
                      value="yes"
-                     onclick="CheckboxChecked(this.checked,'checkboxdiv')">
+                     data-toggle="collapse" data-target="#collapseExample"
+                  >
                   Check this box if you need courier to supply shipping material.
                   </p>
+                  <div class="collapse" id="collapseExample">
+                    <div class="form-group">
 
-                  <div class= "put-it-bold" id="checkboxdiv" style="display:none">
-                  <p>
-                  Data Logger<br />
-                  </p>
-                  <input
-                     type="checkbox"
-                     name="mycheckbox"
-                     value="yes"
-                     >
+                      <div>
+                        <label for="data_logger">Data Logger</label>
+                        <input
+                           type="checkbox"
+                           id="data_logger"
+                           name="data_logger"
+                           value="yes"
+                           >
+                      </div>
+                      <div>
+                        <label for="data_Packaging">Data Logger</label>
+                        <input
+                           type="checkbox"
+                           id="data_Packaging"
+                           name="data_Packaging"
+                           value="yes"
+                           >
+                      </div>
+                      <div>
+                      <label for="data-shipping-container">Shipping container</label>
+                      <input
+                         type="checkbox"
+                         id="data-shipping-container"
+                         name="data-shipping-container"
+                         value="yes"
+                         >
+                      </div>
+                      </div>
+
+                    </div>
                   </div>
-
-                  <div class= "put-it-bold" id="checkboxdiv" style="display:none">
-                  <p>
-                  Packaging<br />
-                  </p>
-                  <input
-                     type="checkbox"
-                     name="mycheckbox"
-                     value="yes"
-                     >
-                  </div>
-
-                  <div class= "put-it-bold" id="checkboxdiv" style="display:none">
-                  <p>
-                  shipping container<br />
-                  </p>
-                  <input
-                     type="checkbox"
-                     name="mycheckbox"
-                     value="yes"
-                     >
-                  </div>
-
-
-                  </form>
-
-
-
-
-
-
-
 
                   <ul>
                   <div class="style">
@@ -114,16 +90,106 @@
               </form>
             </div>
             </div>
-          </div>
+
         </div>
     </div>
+  <div class="quote1">
+            Your Comparaison results
+  </div>
+    <div class="wrapper-border">
+        <div class="container-A">
+                  <div class="wrapper-grey ">
+                    <div class="courier-image">
+                      <p>courier Image</p>
+                        </div>
+                        <div class="courier-information">
+                            <div class="courier-name">
+                              <p>Courier Name</p>
+                            </div>
+                            <div class="courier-price">
+                              <p>Courier price</p>
+                            </div>
+                            <div class="courier-ratings">
+                              <p>Courier ratings</p>
+                            </div>
+                            <div class="courier-collection">
+                              <p>Collection time</p>
+                             </div>
+                        </div>
+                        <div class="courier-button">
+                          <button type="button" class="btn btn-success">Book Now</button>
+                    </div>
+                  </div>
+                  <div class="wrapper-grey ">
+                    <div class="courier-image">
+                      <p>courier Image</p>
+                        </div>
+                        <div class="courier-information">
+                            <div class="courier-name">
+                              <p>Courier Name</p>
+                            </div>
+                            <div class="courier-price">
+                              <p>Courier price</p>
+                            </div>
+                            <div class="courier-ratings">
+                              <p>Courier ratings</p>
+                            </div>
+                            <div class="courier-collection">
+                              <p>Collection time</p>
+                             </div>
+                        </div>
+                        <div class="courier-button">
+                          <button type="button" class="btn btn-success">Book Now</button>
+                    </div>
+                  </div>
+                  <div class="wrapper-grey ">
+                    <div class="courier-image">
+                      <p>courier Image</p>
+                        </div>
+                        <div class="courier-information">
+                            <div class="courier-name">
+                              <p>Courier Name</p>
+                            </div>
+                            <div class="courier-price">
+                              <p>Courier price</p>
+                            </div>
+                            <div class="courier-ratings">
+                              <p>Courier ratings</p>
+                            </div>
+                            <div class="courier-collection">
+                              <p>Collection time</p>
+                             </div>
+                        </div>
+                        <div class="courier-button">
+                          <button type="button" class="btn btn-success">Book Now</button>
+                    </div>
+                  </div>
+                  <div class="wrapper-grey ">
+                    <div class="courier-image">
+                      <p>courier Image</p>
+                        </div>
+                        <div class="courier-information">
+                            <div class="courier-name">
+                              <p>Courier Name</p>
+                            </div>
+                            <div class="courier-price">
+                              <p>Courier price</p>
+                            </div>
+                            <div class="courier-ratings">
+                              <p>Courier ratings</p>
+                            </div>
+                            <div class="courier-collection">
+                              <p>Collection time</p>
+                             </div>
+                        </div>
+                        <div class="courier-button">
+                          <button type="button" class="btn btn-success">Book Now</button>
+                    </div>
+                  </div>
+        </div>
+    </div>
+
   </div>
 </div>
-
-<script type="text/javascript">
-                  CheckboxChecked(document.myform.mycheckbox.checked,'checkboxdiv');
-</script>
-
-
 
 
