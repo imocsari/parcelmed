@@ -45,10 +45,14 @@
 
 .wrapper {
     min-height: 100vh;
+    padding-left: 20px;
+    padding-right: 20px;
+
 }
 
 .wrapper-grey {
-  background: #F4F4F4;
+  border-style: groove;
+  border-radius: 5px;
 }
 
 
@@ -131,8 +135,8 @@
 }
 
 .container-main {
-    padding-left: 20px;
-    padding-right: 20px;
+
+
 }
 
 h1 {
@@ -141,6 +145,7 @@ h1 {
   font-weight: 400;
   clear: both;
   line-height: 1.2;
+
 }
 
 .quote1 {
@@ -148,9 +153,15 @@ h1 {
   display: block;
   background: #3D80C1;
   color: #fff;
-  margin-bottom: 3.2em;
-  padding: 1.6em;
+  margin-top: 1.6em;
+  padding: 1.0em;
   border-radius: 10px;
   text-align: center;
+  font-size: 1.5em;
 
+
+}
+
+.span12 {
+  margin-top: 1.0em;
 }

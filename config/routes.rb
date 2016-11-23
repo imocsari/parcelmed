@@ -12,4 +12,7 @@ Rails.application.routes.draw do
       resources :payment, only: [:index]
     end
   end
+
+  get "/about" => "pages#about"
+  get "/contact" => "pages#contact"
 end
