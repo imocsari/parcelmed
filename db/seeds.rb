@@ -15,3 +15,17 @@ user = User.create({
   email: "adafdf@sfdd.com",
   password: "blabla1234"
 })
+
+Courier.create({
+  name: "Parcelforce",
+  description: "one of the fastest delivery in UK",
+  price: 500,
+  availability: true
+})
+
+Courier.create({
+  name: "Mad Delivery :)",
+  description: "unique delivery",
+  price: 400,
+  availability: true
+})
