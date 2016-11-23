@@ -51,6 +51,74 @@
 }
 
 .wrapper-grey {
+  background-color: #D8D8D8;
+  border-radius: 5px;
+  margin-bottom:5px;
+  margin-top:5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height:100px;
+}
+
+
+.courier-image {
+  flex: 0 0 auto;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.courier-information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.courier-name {
+  flex: 1 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+
+}
+
+.courier-price {
+  flex: 1 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+
+}
+.courier-ratings {
+  flex: 1 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+
+
+}
+.courier-collection{
+  flex: 1 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+
+}
+
+
+.courier-button {
+  flex: 0 0 auto;
+   margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+
+.container-A {
+  padding-bottom:5px;
+  padding-top:5px;
+  padding-right:5px;
+  padding-left:5px;
+
+}
+
+.wrapper-border {
   border-style: groove;
   border-radius: 5px;
 }
@@ -121,6 +189,8 @@
 }
 
 
+
+
 .get-news {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -134,10 +204,7 @@
   height: 50px;
 }
 
-.container-main {
 
-
-}
 
 h1 {
   color: #3D80C1;
