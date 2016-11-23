@@ -13,7 +13,7 @@
     <div class="">
       <div class="well">
       <h3 align="center">Get an Instant Quote</h3>
-        <form action="/bookings" class="form-horizontal">
+        <form action="/couriers" class="form-horizontal">
           <div class="form-group">
             <label for="location1" class="control-label">Pick Up</label>
             <select class="form-control" name="" id="location1">
@@ -28,22 +28,7 @@
           </div>
 
 
-
-
-                    <div class="form-group">
-                    <label for="pricefrom" class="control-label">Collection date/time</label>
-                      <div class='input-group date' id='datetimepicker11'>
-                        <input type='text' class="form-control" />
-                        <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar">
-                            </span>
-                        </span>
-                      </div>
-                    </div>
-
-
-
-
+<!--
           <div class="form-group">
             <label for="pricefrom" class="control-label">Temperature</label>
             <div class="input-group">
@@ -51,8 +36,22 @@
               <input type="text" class="form-control" id="pricefrom" aria-describedby="basic-addon1">
             </div>
           </div>
+ <-->
+            <div class="form-group">
+             <label for="temperatureform" class="control-label">Temperature</label>
+                    <select class="form-control">
+                  <option>Vapour Phase (-196) LN2</option>
+                  <option>Ultra Low (-80)</option>
+                  <option>Frozen(-40)</option>
+                  <option>Frozen(-30)</option>
+                  <option>Frozen(-20)</option>
+                  <option>Refigerated (+2-8)</option>
+                  <option>Controlled Ambient(+15, +25)</option>
+                  <option>Uncontrolled Ambient</option>
+            </select>
+            </div>
             <div style="text-align:center;">
-              <form  class="form-inline" action="/bookings" >
+              <form  class="form-inline" action="/couriers" >
                 <input type="submit" class="btn" value="Get Quote and Book"></button>
               </form>
             </div>
@@ -85,7 +84,7 @@
 </div>
 
 
-    <div class="wrapper-grey padded">
+    <div class="wrapper-grey1 padded">
       <div class="container text-center padded features">
       <h1>As easy as...</h1>
         <div class="row">
@@ -173,7 +172,7 @@
 
 
 
-  <div class="wrapper-grey padded">
+  <div class="wrapper-grey1 padded">
     <div class="get-news">
      <div class="text-center padded" id="newsletter">
       <h2>Get news from us</h2>
