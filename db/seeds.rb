@@ -6,26 +6,33 @@
 #   movies = Movie.create([{ name: 'Star Wars'  { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.create({
+User.destroy_all
+Courier.destroy_all
+Booking.destroy_all
+
+vador = User.create!({
   company_name: 'Star Wars',
-  company_address: 'Lord of the Rings road',
-  company_department: 'Heart',
-  contact_person: 'Lord Voldermort',
+  company_address: 'death star road',
+  company_department: 'Vador Department',
+  contact_person: 'Mr. Dark',
   contact_number: '078493833',
-  email: "adafdf@sfdd.com",
-  password: "blabla1234"
+  email: "iam@dark.com",
+  password: "dark1234"
 })
 
-Courier.create({
-  name: "Parcelforce",
+force_courier = Courier.create!({
+  name: "Parcel Force",
   description: "one of the fastest delivery in UK",
-  price: 500,
-  availability: true
+  price: 500
 })
 
-Courier.create({
+mad_courier = Courier.create!({
   name: "Mad Delivery :)",
-  description: "unique delivery",
-  price: 400,
-  availability: true
+  description: "Unique delivery",
+  price: 400
 })
+
+
+Booking.create!(quantity: 5, courier: force_courier, user: vador)
+
+
