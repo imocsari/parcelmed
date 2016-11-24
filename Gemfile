@@ -10,6 +10,9 @@ gem 'devise'
 gem 'redis'
 gem "geocoder"
 gem "gmaps4rails"
+gem 'jquery-ui-rails'
+gem 'gmaps-autocomplete-rails'
+gem 'geocomplete_rails'
 
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
@@ -32,6 +35,7 @@ gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'sidekiq'
 gem 'sidekiq-failures'
+
 
 # Dependency for the Sidekiq Web UI
 #   => https://github.com/mperham/sidekiq/wiki/Monitoring
