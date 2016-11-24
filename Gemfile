@@ -10,6 +10,7 @@ gem 'devise'
 gem 'redis'
 gem "geocoder"
 gem "gmaps4rails"
+gem 'postmen-rb', '~> 0.1.0', require: 'postmen'
 
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
