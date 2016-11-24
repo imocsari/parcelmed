@@ -30,6 +30,12 @@ gem 'momentjs-rails'
 gem 'bootstrap3-datetimepicker-rails'
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'sidekiq'
+gem 'sidekiq-failures'
+
+# Dependency for the Sidekiq Web UI
+#   => https://github.com/mperham/sidekiq/wiki/Monitoring
+gem 'sinatra', ">= 2.0.0.beta2", require: false
 
 
 group :development, :test do
