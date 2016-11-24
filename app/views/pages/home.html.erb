@@ -13,33 +13,20 @@
     <div class="">
       <div class="well">
       <h3 align="center">Get an Instant Quote</h3>
+
         <form action="/couriers" class="form-horizontal">
+          <input type="hidden" name="step" value=1>
           <div class="form-group">
-            <label for="location1" class="control-label">Pick Up</label>
-            <select class="form-control" name="" id="location1">
-              <option value="">Se59lz</option>
-            </select>
+            <label for="pickup_location" class="control-label">Pick Up</label>
+            <input name="pickup_location" id="pickup_location" placeholder:"Se59lz">
           </div>
           <div class="form-group">
-            <label for="type1" class="control-label">Destination</label>
-            <select class="form-control" name="" id="type1">
-              <option value="">Sw17Oer</option>
-            </select>
+            <label for="destination_location" class="control-label">Destination</label>
+            <input name="destination_location" id="destination_location" placeholder:"Sw170eR">
           </div>
-
-
-<!--
           <div class="form-group">
-            <label for="pricefrom" class="control-label">Temperature</label>
-            <div class="input-group">
-              <div class="input-group-addon" id="basic-addon1">$</div>
-              <input type="text" class="form-control" id="pricefrom" aria-describedby="basic-addon1">
-            </div>
-          </div>
- <-->
-            <div class="form-group">
-             <label for="temperatureform" class="control-label">Temperature</label>
-                    <select class="form-control">
+            <label for="temperatureform" class="control-label">Temperature</label>
+            <select class="form-control" name="temperature">
                   <option>Vapour Phase (-196) LN2</option>
                   <option>Ultra Low (-80)</option>
                   <option>Frozen(-40)</option>
@@ -49,13 +36,12 @@
                   <option>Controlled Ambient(+15, +25)</option>
                   <option>Uncontrolled Ambient</option>
             </select>
-            </div>
-            <div style="text-align:center;">
-              <form  class="form-inline" action="/couriers" >
-                <input type="submit" class="btn" value="Get Quote and Book"></button>
-              </form>
-            </div>
+          </div>
+          <div style="text-align:center;">
+            <input type="submit" class="btn" value="Get Quote and Book"></button>
+          </div>
         </form>
+
       </div>
     </div>
   </div>

@@ -14,12 +14,17 @@ gem 'jquery-ui-rails'
 gem 'gmaps-autocomplete-rails'
 gem 'geocomplete_rails'
 
+gem 'postmen-rb', '~> 0.1.0', require: 'postmen'
+
+
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-datepicker'
 end
+
+gem "letter_opener", group: :development
 
 gem 'sass-rails'
 gem 'jquery-rails'
@@ -51,4 +56,5 @@ group :development, :test do
   gem 'spring'
   gem 'listen', '~> 3.0.5'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
 end
