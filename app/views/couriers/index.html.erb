@@ -10,92 +10,88 @@
     <div class="wrapper-border">
         <div class="container-A">
 
-            <div class="span12">
+          <div class="span12">
             <div class="other-style">
-              <form method="get" action="/" class="form-inline" >
+              <form method="get" action="/couriers" class="form-inline" >
+                <input type="hidden" name="step" value=2>
+                <input type="hidden" name="pickup_location" value="<%= @pickup_location %>">
+                <input type="hidden" name="destination_location" value="<%= @destination_location %>">
+                <input type="hidden" name="temperature" value="<%= @temperature %>">
 
-                  <div class="form-group">
+                <div class="form-group">
                   <p><label for="Quantity" class="">Quantity</label></p>
-                  <p><input class="span5" id="Quantity" type="text"  placeholder="1, 2, 3, ..." ></p>
-                  </div>
-                  <div class="form-group">
+                  <p><input class="span5" name="quantity" id="Quantity" type="text"  placeholder="1, 2, 3, ..." ></p>
+                </div>
+                <div class="form-group">
                   <p><label for="Dimension" class="">Dimension</label></p>
-                  <p><input class="span5" id="Dimension" type="text"  placeholder="in Volume" ></p>
-                  </div>
+                  <p><input class="span5" name="dimension" id="dimension" type="text"  placeholder="in Volume" ></p>
+                </div>
 
-                  <div class="form-group">
+                <div class="form-group">
                   <p><label for="Weight" class="">Weight</label></p>
-                  <p><input class="span5" id="Weight" type="text"  placeholder="in kg" ></p>
-                  </div>
-                  <div class="form-group">
+                  <p><input class="span5" name="weight" id="weight" type="text"  placeholder="in kg" ></p>
+                </div>
+                <div class="form-group">
                   <p><label for="Material type" class="">Material type</label></p>
-                  <p><input class="span5" id="Material type" type="text"  placeholder="i.e. hazardous" ></p>
-                  </div>
-
-
-
-
-
-                  <p>
+                  <p><input class="span5" name="material_type" id="Material type" type="text"  placeholder="i.e. hazardous" ></p>
+                </div>
+                <p>
                   <input
                      type="checkbox"
-                     name="mycheckbox"
                      value="yes"
                      data-toggle="collapse" data-target="#collapseExample"
                   >
                   Check this box if you need courier to supply shipping material.
-                  </p>
-                  <div class="collapse" id="collapseExample">
-                    <div class="form-group">
+                </p>
+                <div class="collapse" id="collapseExample">
+                  <div class="form-group">
 
-                      <div>
-                        <label for="data_logger">Data Logger</label>
-                        <input
-                           type="checkbox"
-                           id="data_logger"
-                           name="data_logger"
-                           value="yes"
-                           >
-                      </div>
-                      <div>
-                        <label for="data_Packaging">Data Logger</label>
-                        <input
-                           type="checkbox"
-                           id="data_Packaging"
-                           name="data_Packaging"
-                           value="yes"
-                           >
-                      </div>
-                      <div>
+                    <div>
+                      <label for="data_logger">Data Logger</label>
+                      <input
+                         type="checkbox"
+                         id="data_logger"
+                         name="data_logger"
+                         >
+                    </div>
+                    <div>
+                      <label for="data_Packaging">Data Packaging</label>
+                      <input
+                         type="checkbox"
+                         id="data_Packaging"
+                         name="data_packaging"
+                         >
+                    </div>
+                    <div>
                       <label for="data-shipping-container">Shipping container</label>
                       <input
                          type="checkbox"
                          id="data-shipping-container"
-                         name="data-shipping-container"
-                         value="yes"
+                         name="data_shipping_container"
                          >
-                      </div>
-                      </div>
-
                     </div>
-                  </div>
+                    </div>
 
-                  <ul>
-                  <div class="style">
-                  <div style="text-align:right;">
-                   <button type="button" class="btn btn-success">Refresh Prices</button>
                   </div>
-                  </div>
-                  </ul>
+                </div>
+
+                <div style="text-align:center;">
+                  <input type="submit" class="btn" value="Get Quote and Book"></button>
+                </div>
               </form>
+
             </div>
-            </div>
+          </div>
 
         </div>
     </div>
   <div class="quote1">
             Your Comparaison results
   </div>
+
+    <%# @couriers.each do |courier| %>
+      <%#= courrier.price %>
+    <%# end %>
     <div class="wrapper-border">
         <div class="container-A">
                   <div class="wrapper-grey ">
