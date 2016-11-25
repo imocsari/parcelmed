@@ -1,6 +1,7 @@
 class Courier < ApplicationRecord
   has_many :bookings
   has_many :users, through: :bookings
+  belongs_to :provider
 
   def self.get_from_api(provider, query_params)
   # require 'uri'

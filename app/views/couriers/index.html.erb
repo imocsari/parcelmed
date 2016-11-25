@@ -89,9 +89,15 @@
             Your Comparaison results
   </div>
 
-    <%# @couriers.each do |courier| %>
-      <%#= courrier.price %>
-    <%# end %>
+    <% if @couriers %>
+      <ul>
+        <% @couriers.each do |courier| %>
+          <li><%= courier.provider.name %> - <%= courier.provider.description %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+
     <div class="wrapper-border">
         <div class="container-A">
                   <div class="wrapper-grey ">

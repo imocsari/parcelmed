@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161123093507) do
+ActiveRecord::Schema.define(version: 20161125112127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,15 @@ ActiveRecord::Schema.define(version: 20161123093507) do
     t.float    "price"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "provider_id"
+    t.index ["provider_id"], name: "index_couriers_on_provider_id", using: :btree
+  end
+
+  create_table "providers", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -90,4 +99,5 @@ ActiveRecord::Schema.define(version: 20161123093507) do
 
   add_foreign_key "bookings", "couriers"
   add_foreign_key "bookings", "users"
+  add_foreign_key "couriers", "providers"
 end
