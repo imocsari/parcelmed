@@ -33,7 +33,7 @@ mad_courier = Courier.create!({
 
 Booking.create!(quantity: 5, courier: force_courier, user: vador)
 
-marken = Courier.create!({
+marken = Courier.new({
   name: "Marken",
   description: "Cold chain transportation",
   tomorrow: true,
@@ -54,9 +54,11 @@ marken = Courier.create!({
   controlled_ambiant_price: 10,
   uncontrolled_ambiant_price: 0
   })
+#marken.photo.path = "http://res.cloudinary.com/dvqpald5f/image/upload/v1480088783/courier4_t54tk3.png"
+marken.save
 
-dpd = Courier.create!({
-  name: "DPD",
+ups = Courier.new({
+  name: "UPS",
   description: "Cold chain transportation",
   tomorrow: true,
   same_day: true,
@@ -76,8 +78,11 @@ dpd = Courier.create!({
   controlled_ambiant_price: 10,
   uncontrolled_ambiant_price: 0
   })
+#ups.photo.path = "http://res.cloudinary.com/dvqpald5f/image/upload/v1480088822/courier5_kmlek8.jpg"
+ups.save
 
-ubs = Courier.create!({
+
+ubs = Courier.new({
   name: "UBS",
   description: "Cold chain transportation",
   tomorrow: true,
@@ -98,4 +103,5 @@ ubs = Courier.create!({
   controlled_ambiant_price: 10,
   uncontrolled_ambiant_price: 0
   })
-
+#ubs.photo.path = "http://res.cloudinary.com/dvqpald5f/image/upload/v1480088726/courier1_wllh8d.png"
+ubs.save

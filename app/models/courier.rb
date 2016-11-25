@@ -1,6 +1,8 @@
 class Courier < ApplicationRecord
   has_many :bookings
   has_many :users, through: :bookings
+  has_attachment :photo
+  # mount_uploader :photo, PhotoUploader
 
   def self.get_couriers(query_couriers_params)
     case query_couriers_params[:temperature]
