@@ -133,6 +133,41 @@
         </div>
         <div class="courier-price">
           <p>Courier price</p>
+
+
+
+
+    <div class="wrapper-border">
+        <div class="container-A">
+              <% if @couriers %>
+      <% @couriers.each do |courier| %>
+                  <div class="wrapper-grey ">
+
+
+                    <div class="courier-image">
+                      <p><%= courier.photo %></p>
+                        </div>
+                        <div class="courier-information">
+                            <div class="courier-name">
+                              <p> <%= courier.name %> </p>
+                            </div>
+                            <div class="courier-price">
+                              <p>Courier price</p>
+                            </div>
+                            <div class="courier-ratings">
+                              <p><%= courier.description %></p>
+                            </div>
+                            <div class="courier-collection">
+                              <p>Collection time</p>
+                             </div>
+                        </div>
+                        <div class="courier-button">
+                         <%= link_to "Book Now", new_booking_path, {class: "btn btn-success"} %>
+                    </div>
+                  </div>
+                <% end %>
+                <% end %>
+
         </div>
         <div class="courier-ratings">
           <p>Courier ratings</p>
