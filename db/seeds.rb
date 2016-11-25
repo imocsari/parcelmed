@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars'  { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Booking.destroy_all
 User.destroy_all
 Courier.destroy_all
-Booking.destroy_all
 
 vador = User.create!({
   company_name: 'Star Wars',
@@ -23,16 +23,79 @@ vador = User.create!({
 force_courier = Courier.create!({
   name: "Parcel Force",
   description: "one of the fastest delivery in UK",
-  price: 500
 })
 
 mad_courier = Courier.create!({
   name: "Mad Delivery :)",
   description: "Unique delivery",
-  price: 400
 })
 
 
 Booking.create!(quantity: 5, courier: force_courier, user: vador)
 
+marken = Courier.create!({
+  name: "Marken",
+  description: "Cold chain transportation",
+  tomorrow: true,
+  same_day: true,
+  vapor_compliant: true,
+  ultra_low_compliant: true,
+  frozen_40_compliant: true,
+  frozen_30_compliant: true,
+  frozen_20_compliant: true,
+  refrigerated_compliant: true,
+  controlled_ambiant_compliant: true,
+  uncontrolled_ambiant_compliant: true,
+  vapor_price: 15,
+  ultra_low_price: 14,
+  frozen_40_price: 13,
+  frozen_30_price: 12,
+  refrigerated_price: 11,
+  controlled_ambiant_price: 10,
+  uncontrolled_ambiant_price: 0
+  })
+
+dpd = Courier.create!({
+  name: "DPD",
+  description: "Cold chain transportation",
+  tomorrow: true,
+  same_day: true,
+  vapor_compliant: false,
+  ultra_low_compliant: false,
+  frozen_40_compliant: true,
+  frozen_30_compliant: true,
+  frozen_20_compliant: true,
+  refrigerated_compliant: true,
+  controlled_ambiant_compliant: true,
+  uncontrolled_ambiant_compliant: true,
+  vapor_price: 19,
+  ultra_low_price: 18,
+  frozen_40_price: 17,
+  frozen_30_price: 12,
+  refrigerated_price: 11,
+  controlled_ambiant_price: 10,
+  uncontrolled_ambiant_price: 0
+  })
+
+ubs = Courier.create!({
+  name: "UBS",
+  description: "Cold chain transportation",
+  tomorrow: true,
+  same_day: true,
+  vapor_compliant: false,
+  ultra_low_compliant: true,
+  frozen_40_compliant: false,
+  frozen_30_compliant: true,
+  frozen_20_compliant: true,
+  refrigerated_compliant: true,
+  controlled_ambiant_compliant: true,
+  uncontrolled_ambiant_compliant: true,
+  vapor_price: 20,
+  ultra_low_price: 28,
+  frozen_40_price: 13,
+  frozen_30_price: 15,
+  refrigerated_price: 11,
+  controlled_ambiant_price: 10,
+  uncontrolled_ambiant_price: 0
+  })
 

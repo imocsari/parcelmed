@@ -1,8 +1,27 @@
 class Courier < ApplicationRecord
   has_many :bookings
   has_many :users, through: :bookings
-  belongs_to :provider
 
+  def self.get_couriers(query_couriers_params)
+    case query_couriers_params[:temperature]
+    when "Vapour Phase (-196) LN2"
+      Courier.where(vapor_compliant: true)
+    when "Ultra Low (-80)"
+      Courier.where(ultra_low_compliant: true)
+    when "Frozen(-40)"
+      Courier.where(frozen_40_compliant: true)
+    when "Frozen(-30)"
+      Courier.where(frozen_30_compliant: true)
+    when "Frozen(-20)"
+      Courier.where(frozen_20_compliant: true)
+    when "Refigerated (+2-8)"
+      Courier.where(refrigerated_compliant: true)
+    when "Controlled Ambient(+15, +25)"
+      Courier.where(controlled_ambiant_compliant: true)
+    when "Uncontrolled Ambient"
+      Courier.where(uncontrolled_ambiant_compliant: true)
+    end
+  end
   #def self.get_from_api(provider, query_params)
   # require 'uri'
   # require 'net/http'

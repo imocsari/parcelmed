@@ -76,7 +76,7 @@
                 </div>
 
                 <div style="text-align:center;">
-                  <input type="submit" class="btn" value="Get Quote and Book"></button>
+                  <input type="submit" class="btn" value="View Couriers"></button>
                 </div>
               </form>
 
@@ -86,15 +86,16 @@
         </div>
     </div>
   <div class="quote1">
-            Your Comparaison results
+        Your Comparison results
   </div>
 
+
     <% if @couriers %>
-      <ul>
-        <% @couriers.each do |courier| %>
-          <li><%= courier.provider.name %> - <%= courier.provider.description %></li>
-        <% end %>
-      </ul>
+      <% @couriers.each do |courier| %>
+        <div class="courier-information">
+          <%= courier.name %> - <%= courier.description %>
+        </div>
+      <% end %>
     <% end %>
 
 
