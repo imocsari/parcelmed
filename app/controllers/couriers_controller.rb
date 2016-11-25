@@ -27,6 +27,10 @@ class CouriersController < ApplicationController
 
  def query_couriers_params
    {
+
+     name: params[:name],
+     photo: params[:photo],
+     description: params[:description],
      pickup_location: params[:pickup_location],
      destination_location: params[:destination_location],
      temperature: params[:temperature],
