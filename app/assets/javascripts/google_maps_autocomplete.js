@@ -2,7 +2,13 @@ function onPlaceChanged() {
   var place = this.getPlace();
   var components = getAddressComponents(place);
 
-  $('#input_to_autocomplete').trigger('blur').val(components.address);
+  $('#input_to_autocomplete').trigger('blur').val(components.zip_code);
+  $('postcode').val(components.zip_code)
+  $('#user_town').val(components.city)
+  $('#user_county').val(components.county)
+  $('#user_country').val(components.country_code)
+  $('#user_company_address').val(components.address)
+
   // $('#booking_zip_code').val(components.zip_code);
   // $('#flat_city').val(components.city);
   // if (components.country_code) {
@@ -11,6 +17,7 @@ function onPlaceChanged() {
 }
 
 function getAddressComponents(place) {
+  console.log(place)
   // If you want lat/lng, you can look at:
   // - place.geometry.location.lat()
   // - place.geometry.location.lng()
@@ -19,6 +26,7 @@ function getAddressComponents(place) {
   var route = null;
   var zip_code = null;
   var city = null;
+  var county = null;
   var country_code = null;
   for (var i in place.address_components) {
     var component = place.address_components[i];
@@ -30,6 +38,8 @@ function getAddressComponents(place) {
         route = component.long_name;
       } else if (type == 'postal_code') {
         zip_code = component.long_name;
+      } else if (type == 'administrative_area_level_2') {
+        county = component.long_name;
       } else if (type == 'locality') {
         city = component.long_name;
       } else if (type == 'country') {
@@ -42,6 +52,7 @@ function getAddressComponents(place) {
     address: street_number == null ? route : (street_number + ' ' + route),
     zip_code: zip_code,
     city: city,
+    county: county,
     country_code: country_code
   };
 }

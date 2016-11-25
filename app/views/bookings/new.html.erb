@@ -9,13 +9,13 @@
         <%= simple_form_for @user do |u| %>
         <%= u.input :postcode, input_html: { id: 'postcode'}, :placeholder => 'Start typing a place name...' %>
         <%= u.button :button, 'Find Address' %>
-        <%= u.input :contact_person %>
-        <%= u.input :email %>
-        <%= u.input :company_name %>
-        <%= u.input :company_address %>
-        <%= u.input :town %>
-        <%= u.input :county %>
-        <%= u.input :country, collection: ["United Kingdom"]  %>
+        <%= u.input :contact_person, required: true %>
+        <%= u.input :email, required: true %>
+        <%= u.input :company_name, required: true%>
+        <%= u.input :company_address, required: true %>
+        <%= u.input :town, required: true %>
+        <%= u.input :county, required: true%>
+        <%= u.input :country, as: :string %>
       </div>
     </div>
 
@@ -24,13 +24,13 @@
       <div class="collection">2. Delivery Address
         <%= u.input :postcode, input_html: { id: 'postcode'}, :placeholder => 'Start typing a place name...' %>
         <%= u.button :button, 'Find Address' %>
-        <%= u.input :contact_person %>
-        <%= u.input :email %>
-        <%= u.input :company_name %>
-        <%= u.input :company_address %>
-        <%= u.input :town %>
-        <%= u.input :county %>
-        <%= u.input :country, collection: ["United Kingdom"] %>
+        <%= u.input :contact_person, required: true %>
+        <%= u.input :email, required: true %>
+        <%= u.input :company_name, required: true %>
+        <%= u.input :company_address, required: true %>
+        <%= u.input :town, required: true %>
+        <%= u.input :county, required: true %>
+        <%= u.input :country, as: :string %>
       </div>
     </div>
   </div>
@@ -68,12 +68,12 @@
 <%= content_for(:after_js) do %>
   <script>
     $(document).ready(function() {
-      var input_to_autocomplete = $('#postcode').get(0);
+      var input_to_pickup_autocomplete = $('#postcode').get(0);
 
-      if (input_to_autocomplete) {
-        var autocomplete = new google.maps.places.Autocomplete(input_to_autocomplete, { types: ['geocode'] });
+      if (input_to_pickup_autocomplete) {
+        var autocomplete = new google.maps.places.Autocomplete(input_to_pickup_autocomplete, { types: ['geocode'] });
         google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
-        google.maps.event.addDomListener(input_to_autocomplete, 'keydown', function(e) {
+        google.maps.event.addDomListener(input_to_pickup_autocomplete, 'keydown', function(e) {
           if (e.keyCode == 13) {
             e.preventDefault(); // Do not submit the form on Enter.
           }
@@ -88,7 +88,7 @@
 
 
 
-
+<!-- Page created by Antonio Smith 11/16 -->
 
 
 
