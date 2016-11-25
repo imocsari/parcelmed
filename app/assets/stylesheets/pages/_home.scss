@@ -19,10 +19,13 @@
   left: 60px;
 }
 .banner p {
+
   font-size: 20px;
   font-weight: lighter;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 20px;
+
+
 }
 
 .container-form {
@@ -37,6 +40,11 @@
   background-color: rgba(255, 255, 255, 0.15);
   border-radius: 25px;
   color: white;
+  p {
+    color: black;
+    font-style: serif;
+
+  }
 }
 
 .btn {
@@ -243,5 +251,16 @@ position: relative;
 padding: 2px;
 
 }
+
+.pickup_location {
+  color:black;
+
+}
+
+.destination_location {
+ color:black;
+
+}
+
 
 
