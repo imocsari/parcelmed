@@ -1,0 +1,33 @@
+"meta":{"code":200,"message":"OK","details":[]},"data":{"created_at":"2016-11-24T16:48:39+00:00","id":"586b5665-c725-4de9-b24f-1e85e45adca7","updated_at":"2016-11-24T16:48:41+00:00","status":"calculated","rates":[
+
+{"shipper_account":{"id":"7482a897-4996-48b6-9d6c-7e7b8689c57c","slug":"ups","description":"quotes"}, "service_type":"ups_expedited","service_name":"UPS Expedited","pickup_deadline":null,"booking_cut_off":null,"delivery_date":null,"transit_time":null,"error_message":null,"info_message":"User Id and Shipper Number combination is not qualified to receive negotiated rates. Your invoice may vary from the displayed reference rates.","charge_weight":{"value":6.5,"unit":"kg"},"total_charge":{"amount":1380.84,"currency":"HKD"},"detailed_charges":[{"type":"base","charge":{"amount":1380.84,"currency":"HKD"}}]},
+
+{"shipper_account":{"id":"7482a897-4996-48b6-9d6c-7e7b8689c57c","slug":"ups","description":"quotes"},"service_type":"ups_saver","service_name":"UPSaver","pickup_deadline":null,"booking_cut_off":null,"delivery_date":null,"transit_time":1,"error_message":null,"info_message":"User Id and Shipper Number combination is not qualified to receive negotiated rates. Your invoice may vary from the displayed reference rates.","charge_weight":{"value":6.5,"unit":"kg"},"total_charge":{"amount":1449.66,"currency":"HKD"},"detailed_charges":[{"type":"base","charge":{"amount":1449.66,"currency":"HKD"}}]},
+
+{"shipper_account":{"id":"7482a897-4996-48b6-9d6c-7e7b8689c57c","slug":"ups","description":"quotes"},"service_type":"ups_express","service_name":"UPS Express","pickup_deadline":null,"booking_cut_off":null,"delivery_date":"10:30","transit_time":1,"error_message":null,"info_message":"User Id and Shipper Number combination is not qualified to receive negotiated rates. Your invoice may vary from the displayed reference rates.","charge_weight":{"value":6.5,"unit":"kg"},"total_charge":{"amount":1535.13,"currency":"HKD"},"detailed_charges":[{"type":"base","charge":{"amount":1535.13,"currency":"HKD"}}]},
+
+{"shipper_account":{"id":"7482a897-4996-48b6-9d6c-7e7b8689c57c","slug":"ups","description":"quotes"},
+"service_type":"ups_express_plus",
+"service_name":"UPS Express Plus",
+"pickup_deadline":null,
+"booking_cut_off":null,
+"delivery_date":"08:30",
+"transit_time":1,
+"error_message":null,
+"info_message":"User Id and Shipper Number combination is not qualified to receive negotiated rates. Your invoice may vary from the displayed reference rates.",
+"charge_weight":{"value":6.5,"unit":"kg"},
+"total_charge":{"amount":1890.33,"currency":"HKD"},"detailed_charges":[{"type":"base","charge":{"amount":1890.33,"currency":"HKD"}}]}]}}
+
+
+
+response["rates"].each do |rate|
+  Courrier.new(price: rate["total_charge"]["amount"], name: rate["service_name"])
+
+end
+
+--------
+courriers#index
+def index
+  @booking = Booking.new()
+  @booking.get_
+end

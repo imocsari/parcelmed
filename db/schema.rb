@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20161125112127) do
+
+ActiveRecord::Schema.define(version: 20161124183022) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +52,7 @@ ActiveRecord::Schema.define(version: 20161125112127) do
     t.boolean  "hazardous_material"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.string   "terms_and_conditions"
     t.index ["courier_id"], name: "index_bookings_on_courier_id", using: :btree
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
@@ -93,6 +98,10 @@ ActiveRecord::Schema.define(version: 20161125112127) do
     t.string   "contact_person"
     t.string   "contact_number"
     t.boolean  "admin"
+    t.string   "postcode"
+    t.string   "town"
+    t.string   "county"
+    t.string   "country"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
