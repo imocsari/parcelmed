@@ -13,6 +13,7 @@ gem "gmaps4rails"
 gem 'jquery-ui-rails'
 gem 'gmaps-autocomplete-rails'
 gem 'geocomplete_rails'
+gem 'uk_postcode', '~> 2.1', '>= 2.1.1'
 
 gem 'postmen-rb', '~> 0.1.0', require: 'postmen'
 

@@ -298,6 +298,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.3)
       execjs (>= 0.3.0, < 3)
+    uk_postcode (2.1.1)
     warden (1.2.6)
       rack (>= 1.0)
     websocket-driver (0.6.4)
@@ -347,6 +348,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   uglifier
+  uk_postcode (~> 2.1, >= 2.1.1)
 
 RUBY VERSION
    ruby 2.3.1p112
