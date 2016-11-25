@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :couriers, through: :bookings
 
-  after_save :async_update # Run on create & update
+  # after_save :async_update # Run on create & update
 
   private
 

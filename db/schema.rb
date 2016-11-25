@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20161125112127) do
-
-ActiveRecord::Schema.define(version: 20161124183022) do
-
+ActiveRecord::Schema.define(version: 20161125140759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,16 +56,26 @@ ActiveRecord::Schema.define(version: 20161124183022) do
   create_table "couriers", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.float    "temperature"
-    t.float    "weight"
-    t.integer  "dimensions"
     t.boolean  "tomorrow"
     t.boolean  "same_day"
-    t.float    "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "provider_id"
-    t.index ["provider_id"], name: "index_couriers_on_provider_id", using: :btree
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+    t.boolean  "vapor_compliant",                default: false, null: false
+    t.boolean  "ultra_low_compliant",            default: false, null: false
+    t.boolean  "frozen_40_compliant",            default: false, null: false
+    t.boolean  "frozen_30_compliant",            default: false, null: false
+    t.boolean  "refrigerated_compliant",         default: false, null: false
+    t.boolean  "controlled_ambiant_compliant",   default: false, null: false
+    t.boolean  "uncontrolled_ambiant_compliant", default: false, null: false
+    t.float    "vapor_price"
+    t.float    "ultra_low_price"
+    t.float    "frozen_40_price"
+    t.float    "frozen_30_price"
+    t.float    "refrigerated_price"
+    t.float    "controlled_ambiant_price"
+    t.float    "uncontrolled_ambiant_price"
+    t.boolean  "frozen_20_compliant",            default: false, null: false
+    t.float    "fozen_20_price"
   end
 
   create_table "providers", force: :cascade do |t|
@@ -108,5 +114,4 @@ ActiveRecord::Schema.define(version: 20161124183022) do
 
   add_foreign_key "bookings", "couriers"
   add_foreign_key "bookings", "users"
-  add_foreign_key "couriers", "providers"
 end
