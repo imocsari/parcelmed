@@ -238,8 +238,9 @@ h1 {
   text-align: center;
   font-size: 1.5em;
 
-
 }
+
+
 
 .span12 {
   margin-top: 1.0em;
@@ -248,8 +249,12 @@ h1 {
 
 .form-group {
 position: relative;
-padding: 2px;
+padding: 1px;
 
+}
+
+.home-page {
+  width: 250px;
 }
 
 .pickup_location {
@@ -262,5 +267,8 @@ padding: 2px;
 
 }
 
+.form-horizontal .form-group {
+  margin-left: 0px;
+}
 
 
