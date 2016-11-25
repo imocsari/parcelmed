@@ -34,7 +34,6 @@ class CouriersController < ApplicationController
      pickup_location: params[:pickup_location],
      destination_location: params[:destination_location],
      temperature: params[:temperature],
-     pickup_location: params[:pickup_location],
      quantity: params[:quantity],
      dimension: params[:dimension],
      weight: params[:weight],
