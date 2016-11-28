@@ -54,7 +54,7 @@ marken = Courier.new({
   controlled_ambiant_price: 10,
   uncontrolled_ambiant_price: 0
   })
-#marken.photo.path = "http://res.cloudinary.com/dvqpald5f/image/upload/v1480088783/courier4_t54tk3.png"
+marken.photo_url = "http://res.cloudinary.com/dvqpald5f/image/upload/c_scale,h_60,w_200/v1480340736/marken.logo_a6vuul.png"
 marken.save
 
 ups = Courier.new({
@@ -78,7 +78,7 @@ ups = Courier.new({
   controlled_ambiant_price: 10,
   uncontrolled_ambiant_price: 0
   })
-#ups.photo.path = "http://res.cloudinary.com/dvqpald5f/image/upload/v1480088822/courier5_kmlek8.jpg"
+ups.photo_url = "http://res.cloudinary.com/dvqpald5f/image/upload/c_scale,h_60,w_200/v1480088822/courier5_kmlek8.jpg"
 ups.save
 
 
@@ -103,5 +103,5 @@ ubs = Courier.new({
   controlled_ambiant_price: 10,
   uncontrolled_ambiant_price: 0
   })
-#ubs.photo.path = "http://res.cloudinary.com/dvqpald5f/image/upload/v1480088726/courier1_wllh8d.png"
+ubs.photo_url = "http://res.cloudinary.com/dvqpald5f/image/upload/c_scale,h_60,w_200/v1480088726/courier1_wllh8d.png"
 ubs.save
