@@ -65,8 +65,8 @@
           <div class="wrapper-grey ">
             <div class="courier-information">
               <div class="courier-image">
-                <p>Courier photo</p>
-              </div>
+ +              <p><%= cl_image_tag courier.photo.path, width: 150, height: 70 %></p>
+ +              </div>
               <div class="courier-name">
                 <p><b> <%= courier.name %> </b></p>
               </div>
