@@ -5,22 +5,22 @@
 
 .title {
   padding: 70px 2px;
-  font-size: 73px;
+  font-size: 55px;
   color: white;
+  strong {
+    color: $yellow;
+  }
 
 }
 
 .form-box {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 12px;
-  border: 2px white solid;
-  padding: 10px 15px;
-}
-
-.instant-quote-box {
-  padding: 60px 50px;
-  padding-top: 90px;
-
+  // border: 2px white solid;
+  margin-top: 70px;
+  .form-body {
+    padding: 30px;
+  }
 }
 
 .home-page {
@@ -46,7 +46,7 @@ h3 {
 
 .couriers {
   height: 12vh;
-  margin-top: 20px;
+  margin-top: 45px;
   margin-bottom: 0px;
 }
 
@@ -125,12 +125,52 @@ h3 {
 }
 
 .wrapper-border {
-  border-style: groove;
-  border-radius: 5px;
+  border-radius: 0 0 5px 5px;
+  border: none;
+  background: #f3f3f3;
+  .container {
+    margin-top: 0px !important;
+    padding-top: 30px;
+  }
 }
 
 .wrapper-grey1{
+  padding: 100px 0;
   background-color: #f6f6f6;
+  h2 {
+    font-size: 32px;
+    margin-bottom: 70px;
+    font-weight: bold;
+  }
+  p {
+    font-size: 22px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: grey;
+    span {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      margin-right: 10px;
+      /* display: inline-block; */
+      background: $yellow;
+      color: white;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+}
+
+#carousel {
+  padding: 100px 0;
+  h2 {
+    font-size: 32px;
+    margin-bottom: 70px;
+    font-weight: bold;
+  }
 }
 
 .padded {
@@ -199,6 +239,10 @@ h3 {
 }
 
 
+.carousel-inner blockquote {
+  font-weight: lighter !important;
+  text-align: justify;
+}
 
 // courier results page
 .quote1 {
@@ -207,10 +251,62 @@ h3 {
   color: #fff;
   margin-top: 1.6em;
   padding: 1.0em;
-  border-radius: 10px;
+
   text-align: center;
   font-size: 1.5em;
+  border-radius: 5px 5px 0 0;
 }
+
+
+.other-style {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.wrapper-courier {
+  background: white;
+  margin: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 70px;
+  p {
+    margin: 0;
+  }
+  .btn {
+    margin-top: 0;
+  }
+  .courier-name {
+    b {
+      font-size: 20px;
+    }
+    .avail {
+      font-size: 16px;
+      color: grey;
+    }
+  }
+
+}
+
+.courier-price {
+  font-size: 20px;
+  .times {
+    color: $red;
+    padding: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -7,32 +7,26 @@
     <div class="col-sm-6 grid-item-left medium-width-6">
       <div class="collection">1. Collection Address
         <%= simple_form_for @booking do |b| %>
-        <%= b.input :pick_up_postcode, input_html: { id: 'postcode'}, :placeholder => 'Start typing a place name...' %>
+        <%= b.input :pick_up_contact_address %>
         <%= b.button :button, 'Find Address' %>
-        <%= b.input :pick_up_contact_name, required: true %>
-        <%= b.input :pick_up_contact_email, required: true %>
-        <%= b.input :pick_up_company_name, required: true%>
-        <%= b.input :pick_up_department, required: true%>
-        <%= b.input :pick_up_contact_address, required: true %>
-        <%= b.input :pick_up_town, required: true %>
-        <%= b.input :pick_up_county, required: true%>
-        <%= b.input :pick_up_country, as: :string %>
+        <%= b.input :pick_up_contact_name %>
+        <%= b.input :pick_up_contact_email %>
+        <%= b.input :pick_up_company_name%>
+        <%= b.input :pick_up_department%>
+        <%= b.input :pick_up_postcode, input_html: { id: 'postcode'}, :placeholder => 'Start typing a place name...' %>
       </div>
     </div>
 
       <!-- Delivery Address -->
     <div class="col-sm-6 grid-item-right medium-width-6">
       <div class="collection">2. Delivery Address
-        <%= b.input :destination_postcode, input_html: { id: 'postcode'}, :placeholder => 'Start typing a place name...' %>
+        <%= b.input :destination_contact_address %>
         <%= b.button :button, 'Find Address' %>
-        <%= b.input :destination_contact_name, required: true %>
-        <%= b.input :destination_contact_email, required: true %>
-        <%= b.input :destination_company_name, required: true%>
-        <%= b.input :destination_department, required: true%>
-        <%= b.input :destination_contact_address, required: true %>
-        <%= b.input :destination_town, required: true %>
-        <%= b.input :destination_county, required: true%>
-        <%= b.input :destination_country, as: :string %>
+        <%= b.input :destination_contact_name %>
+        <%= b.input :destination_contact_email %>
+        <%= b.input :destination_company_name%>
+        <%= b.input :destination_department%>
+        <%= b.input :destination_postcode, input_html: { id: 'postcode'}, :placeholder => 'Start typing a place name...' %>
       </div>
     </div>
   </div>

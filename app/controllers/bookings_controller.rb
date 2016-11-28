@@ -6,13 +6,16 @@ class BookingsController < ApplicationController
   end
 
   def new
-    query = URI(request.referer).query.split("&")
-    @quantity = query[4].split("=")[1]
-    @dimension = query[5].split("=")[1]
-    @weight = query[6].split("=")[1]
-    @material_type = query[7].split("=")[1]
+    # amount=10&weight=3&courier_id=13&pickup_location=12+Elder+Street%2C+London%2C+United+Kingdom&destination_location=18+Rue+Titon%2C+Paris%2C+France&temperature=frozen_20&commit=Book+Now
+    @quantity = params[:amount]
+    @weight = params[:weight]
+    @courier = Courier.find(params[:courier_id])
+    @pickup_location = params[:pickup_location]
+    @destination_location = params[:destination_location]
+    @temperature = params[:temperature]
 
-    @booking = Booking.new
+    @booking = Booking.new(user: current_user, courier: @courier, status: "pending", quantity: @quantity, pick_up_contact_address: @pickup_location, destination_contact_address: @destination_location )
+
   end
 
   def show
