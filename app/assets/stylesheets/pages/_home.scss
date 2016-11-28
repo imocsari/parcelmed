@@ -5,22 +5,22 @@
 
 .title {
   padding: 70px 2px;
-  font-size: 73px;
+  font-size: 55px;
   color: white;
+  strong {
+    color: $yellow;
+  }
 
 }
 
 .form-box {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 12px;
-  border: 2px white solid;
-  padding: 10px 15px;
-}
-
-.instant-quote-box {
-  padding: 60px 50px;
-  padding-top: 90px;
-
+  // border: 2px white solid;
+  margin-top: 70px;
+  .form-body {
+    padding: 30px;
+  }
 }
 
 .home-page {
@@ -46,7 +46,7 @@ h3 {
 
 .couriers {
   height: 12vh;
-  margin-top: 20px;
+  margin-top: 45px;
   margin-bottom: 0px;
 }
 
@@ -130,7 +130,42 @@ h3 {
 }
 
 .wrapper-grey1{
+  padding: 100px 0;
   background-color: #f6f6f6;
+  h2 {
+    font-size: 32px;
+    margin-bottom: 70px;
+    font-weight: bold;
+  }
+  p {
+    font-size: 22px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: grey;
+    span {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      margin-right: 10px;
+      /* display: inline-block; */
+      background: $yellow;
+      color: white;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+}
+
+#carousel {
+  padding: 100px 0;
+  h2 {
+    font-size: 32px;
+    margin-bottom: 70px;
+    font-weight: bold;
+  }
 }
 
 .padded {
@@ -199,6 +234,10 @@ h3 {
 }
 
 
+.carousel-inner blockquote {
+  font-weight: lighter !important;
+  text-align: justify;
+}
 
 // courier results page
 .quote1 {
