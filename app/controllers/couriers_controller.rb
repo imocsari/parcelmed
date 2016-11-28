@@ -1,11 +1,9 @@
 class CouriersController < ApplicationController
   def index
-    if params[:step] == "1"
-      # User comes from home, we store the current paramas in instance variables and send them back in the view
-      @pickup_location = params["pickup_location"]
-      @destination_location = params["destination_location"]
-      @temperature = params["temperature"]
-    elsif params[:step] == "2" # User is in step 2
+    @pickup_location = params["pickup_location"]
+    @destination_location = params["destination_location"]
+    @temperature = params["temperature"]
+    if params[:step] == "2" # User is in step 2
       @couriers = Courier.get_couriers(query_couriers_params)
     end
   end
@@ -22,12 +20,10 @@ class CouriersController < ApplicationController
   #  end
   #end
 
-
  private
 
  def query_couriers_params
    {
-
      name: params[:name],
      photo: params[:photo],
      description: params[:description],

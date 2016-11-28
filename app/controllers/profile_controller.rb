@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class ProfileController < ApplicationController
   before_action :authenticate_user!, only: :dashboard
   before_action :set_user, except: :dashboard
 
