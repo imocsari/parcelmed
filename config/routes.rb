@@ -12,7 +12,9 @@ require "sidekiq/web"
   root to: 'pages#home'
   resources :users, except: [:show, :new, :create, :destroy]
   get '/dashboard', to: 'profile#dashboard'
-  get '/settings', to: 'profile#dashboard_edit'
+  get '/usersettings', to: 'profile#dashboard_edit'
+  get '/userpayments', to: 'profile#dashboard_payment'
+  get '/userbookings', to: 'profile#dashboard_booking'
   resources :couriers
   resources :bookings do
     resources :payments, only: [:new, :create]

@@ -1,12 +1,39 @@
-<h1>Your Profile</h1>
-
-
 <%= render 'shared/profile_navbar' %>
+<div class="container">
+	<div class="row">
+		<h2 class="text-center"><strong>Profile details</strong></h2>
+        <div class="col-md-12 text-left"><br>
+                <div class=" col-md-12 col-lg-12 ">
+                                <table class="table table-user-information">
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Company name:</strong></td>
+                                            <td><%= @user.company_name %></td>
+                                        </tr>
+                                        <tr >
+                                            <td><strong>Email address:</strong></td>
+                                            <td><%= @user.email %></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Company department:</strong></td>
+                                            <td><%= @user.company_department %></td>
+                                        </tr>
 
+                                        <tr class="table-success">
+                                            <tr>
+                                                <td><strong>Contact Person:</strong></td>
+                                                <td><%= @user.contact_person %></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Contact number:</strong></td>
+                                                <td><%= @user.contact_number %></td>
+                                            </tr>
 
+                                        </tr>
 
-<h1><%= @user.company_name %></h1>
-<p><%= @user.email %></p>
-<p><%= @user.company_department %></p>
-<p><%= @user.contact_person %></p>
-<p><%= @user.contact_number %></p>
+                                    </tbody>
+                                </table>
+        </div>
+	</div>
+</div>
+</div>
