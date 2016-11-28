@@ -7,6 +7,12 @@
     <div class="col-sm-6 grid-item-left medium-width-6">
       <div class="collection">1. Collection Address
         <%= simple_form_for @booking do |b| %>
+        <%= b.input :courier_id, as: :hidden %>
+        <%= b.input :status, as: :hidden %>
+        <%= b.input :quantity, as: :hidden %>
+         <%= b.input :weight, as: :hidden %>
+
+
         <%= b.input :pick_up_contact_address %>
         <%= b.button :button, 'Find Address' %>
         <%= b.input :pick_up_contact_name %>
