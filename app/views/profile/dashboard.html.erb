@@ -1,12 +1,38 @@
-<h1>Your Profile</h1>
-
-
 <%= render 'shared/profile_navbar' %>
 
+<div class="bannercontact">
+  <div class="contactform">
 
-
-<h1><%= @user.company_name %></h1>
-<p><%= @user.email %></p>
-<p><%= @user.company_department %></p>
-<p><%= @user.contact_person %></p>
-<p><%= @user.contact_number %></p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"> </div>
+         <div class="col-md-3">
+         <div class="brand">
+         <h3> Elegant List</h3>
+        </div>
+            <ul class="list-group">
+                <li class="list-group-item">User:<%= @user.company_name %></li>
+                <li class="list-group-item"><%= @user.email %></li>
+                <li class="list-group-item"><%= @user.company_department %></li>
+                <li class="list-group-item"><%= @user.contact_person %></li>
+                <li class="list-group-item"><%= @user.contact_number %></li>
+            </ul>
+        </div>
+        <div class="col-md-2"> </div>
+        <div class="col-md-3">
+         <div class="brand">
+         <h3> Elegant List</h3>
+        </div>
+            <ul class="list-group">
+                <li class="list-group-item"> list item one</li>
+                <li class="list-group-item"> list item two </li>
+                <li class="list-group-item"> list item three</li>
+                <li class="list-group-item"> list item four</li>
+                <li class="list-group-item"> list item five</li>
+            </ul>
+        </div>
+        <div class="col-md-2"> </div>
+    </div>
+</div>
+</div>
+</div>
