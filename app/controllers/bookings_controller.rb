@@ -1,11 +1,17 @@
 class BookingsController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [ :new, :create, :show ]
 
   def index
     @bookings = Booking.where(courier: @courier)
   end
 
   def new
+    query = URI(request.referer).query.split("&")
+    @quantity = query[4].split("=")[1]
+    @dimension = query[5].split("=")[1]
+    @weight = query[6].split("=")[1]
+    @material_type = query[7].split("=")[1]
+
     @booking = Booking.new
   end
 
@@ -53,7 +59,11 @@ private
       :destination_county,
       :destination_country,
       :pick_up_department,
-      :destination_department
+      :destination_department,
+      :quantity,
+      :dimension,
+      :weight,
+      :material_type
     )
   end
 end

@@ -1,4 +1,6 @@
 class CouriersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index ]
+
   def index
     @pickup_location = params["pickup_location"]
     @destination_location = params["destination_location"]

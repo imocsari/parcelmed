@@ -55,6 +55,11 @@
         <p><%= b.check_box :terms_and_conditions %>
           I agree to the <a href="/terms-and-conditions" target="_blank">terms and conditions</a> and <a href="/privacy-policy" target="_blank">privacy policy</a> and confirm that my shipment complies with the <a href="/prohibited-items" class="js-new-window" data-width="465" data-height="550">restricted items list</a>. <a href="/terms-and-conditions" target="_blank">terms and conditions</a><a href="/privacy-policy" target="_blank">privacy policy</a></p>
 
+          <% b.input :quantity, :as => :hidden, :input_html => { :value =>  @quantity } %>
+          <% b.input :dimension, :as => :hidden, :input_html => { :value =>  @dimension } %>
+          <% b.input :weight, :as => :hidden, :input_html => { :value =>  @weight } %>
+          <% b.input :material_type, :as => :hidden, :input_html => { :value =>  @material_type } %>
+
           <%= b.button :submit, 'Confirm Booking'  %>
           <% end %>
         </div>
