@@ -24,6 +24,8 @@ gem 'postmen-rb', '~> 0.1.0', require: 'postmen'
 
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
+gem 'money-rails'
+gem 'stripe'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-datepicker'

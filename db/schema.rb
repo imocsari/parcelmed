@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161125162031) do
+
+ActiveRecord::Schema.define(version: 20161128114302) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,7 +50,6 @@ ActiveRecord::Schema.define(version: 20161125162031) do
     t.integer  "user_id"
     t.integer  "courier_id"
     t.integer  "status"
-    t.float    "unit_price"
     t.integer  "quantity"
     t.boolean  "extra_packaging"
     t.string   "pick_up_contact_address"
@@ -61,9 +62,10 @@ ActiveRecord::Schema.define(version: 20161125162031) do
     t.string   "destination_contact_phone"
     t.string   "special_requirements"
     t.boolean  "hazardous_material"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.string   "terms_and_conditions"
+    t.integer  "amount_pennies",              default: 0, null: false
     t.index ["courier_id"], name: "index_bookings_on_courier_id", using: :btree
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
