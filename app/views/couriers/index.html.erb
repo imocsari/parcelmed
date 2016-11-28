@@ -1,11 +1,10 @@
 <div class="wrapper">
   <div class="container-main">
-    <h1>Specification and results</h1>
     <div class="quote1">
       Add Your Specification
     </div>
     <div class="wrapper-border">
-      <div class="container" style= "margin-top:30px">
+      <div class="container" >
         <div class="other-style">
           <form method="get" action="/couriers" class="form-inline" >
             <input type="hidden" name="step" value=2>
@@ -13,16 +12,16 @@
             <input type="hidden" name="destination_location" value="<%= @destination_location %>">
             <input type="hidden" name="temperature" value="<%= @temperature %>">
             <div class="form-group">
-              <p><label for="Quantity" class="">Quantity</label></p>
-              <p><input class="form-control" name="quantity" id="Quantity" type="text" placeholder="1, 2, 3, ..."></p>
+              <p><label for="quantity" class="">Quantity</label></p>
+              <p><input class="form-control" name="quantity" id="quantity" type="text" placeholder="1" value="1"></p>
             </div>
-            <div class="form-group">
+            <!--<div class="form-group">
               <p><label for="Dimension" class="">Dimension</label></p>
               <p><input  class="form-control" name="dimension" id="dimension" type="text"  placeholder="in Volume"></p>
-            </div>
+            </div> -->
             <div class="form-group">
               <p><label for="Weight" class="">Weight</label></p>
-              <p><input class="form-control" name="weight" id="weight" type="text"  placeholder="in kg"></p>
+              <p><input class="form-control" name="weight" id="weight" type="text"  placeholder="1 kg" value="1"></p>
             </div>
             <div class="form-group">
               <p><label for="Material type" class="">Material type</label></p>
@@ -47,49 +46,76 @@
                 </div>
               </div>
             </div>
-            <div style="text-align:center; margin-bottom:30px">
+           <!--  <div style="text-align:center; margin-bottom:30px">
               <input type="submit" class="btn" value="View Couriers">
-            </div>
+            </div> -->
           </form>
         </div>
       </div>
     </div>
-  <div class="quote1">
-    Your Comparison results
   </div>
+
 
   <div class="wrapper-border">
     <div class="container-A">
       <% if @couriers %>
         <% @couriers.each do |courier| %>
-          <div class="wrapper-grey ">
-            <div class="courier-information">
+          <div class="wrapper-courier ">
+
               <div class="courier-image">
-                <p>Courier photo</p>
+                <p><%= cl_image_tag courier.photo.path, width: 200, height: 100, crop: :fit %></p>
               </div>
               <div class="courier-name">
                 <p><b> <%= courier.name %> </b></p>
+                <p class="avail">
+                  Available for
+                  <% if courier.tomorrow %>
+                    <span class="label label-warning">tomorrow</span>
+                  <% else %>
+                    <span class="label label-warning" style="opacity: 0.3">tomorrow</span>
+                  <% end %>
+                  <% if courier.same_day %>
+                    <span class="label label-success">today</span>
+                   <% else %>
+                    <span class="label label-success" style="opacity: 0.3">today</span>
+                  <% end %>
+                </p>
+              </div>
+              <div class="courier-ratings">
+                <% rating = rand(5) %>
+                <ul class="list-inline" style="margin: 0">
+                <% rating.times do %>
+                  <li><i class="fa fa-star" style="color: yellow"></i></li>
+                <% end %>
+                <% (5 - rating).times do %>
+                  <li><i class="fa fa-star" style="color: lightgrey"></i></li>
+                <% end %>
+                </ul>
               </div>
               <div class="courier-price">
-                <p>Courier price</p>
+                <p><strong>£<span class="unit-price"><%= courier.price_for(params[:temperature]) %></span></strong>
+                <span class="times">X</span>
+                <span class="amount">1</span> unit
+                <span class="times">X</span>
+                <span class="weight">1</span> kg
+                <span class="times">=</span>
+                <span>£<span class="total"><%= courier.price_for(params[:temperature]) %></span></span>
               </div>
-              <div class="courier-ratings">
-                <p><%= courier.description %></p>
+              <div class="courier-button">
+                <%= form_tag new_booking_path, method: :get do %>
+                  <input type="hidden" class="amount-input" name="amount" value="1">
+                  <input type="hidden" class="weight-input" name="weight" value="1">
+                  <input type="hidden" name="courier_id" value="<%= courier.id %>">
+                  <input type="hidden" name="pickup_location" value="<%= params[:pickup_location] %>">
+                  <input type="hidden" name="destination_location" value="<%= params[:destination_location] %>">
+                  <input type="hidden" name="temperature" value="<%= @temperature %>">
+
+                 <%= submit_tag "Book Now", {class: "btn btn-success"} %>
+                <% end %>
               </div>
-              <div class="courier-collection">
-                <p>Collection time</p>
-               </div>
-              <div class="courier-ratings">
-                <p>Courier ratings</p>
-              </div>
-            </div>
-            <div class="courier-button">
-             <%= link_to "Book Now", new_booking_path, {class: "btn btn-success"} %>
-            </div>
           </div>
         <% end %>
-        <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

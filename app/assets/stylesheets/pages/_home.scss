@@ -125,8 +125,13 @@ h3 {
 }
 
 .wrapper-border {
-  border-style: groove;
-  border-radius: 5px;
+  border-radius: 0 0 5px 5px;
+  border: none;
+  background: #f3f3f3;
+  .container {
+    margin-top: 0px !important;
+    padding-top: 30px;
+  }
 }
 
 .wrapper-grey1{
@@ -246,10 +251,62 @@ h3 {
   color: #fff;
   margin-top: 1.6em;
   padding: 1.0em;
-  border-radius: 10px;
+
   text-align: center;
   font-size: 1.5em;
+  border-radius: 5px 5px 0 0;
 }
+
+
+.other-style {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.wrapper-courier {
+  background: white;
+  margin: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 70px;
+  p {
+    margin: 0;
+  }
+  .btn {
+    margin-top: 0;
+  }
+  .courier-name {
+    b {
+      font-size: 20px;
+    }
+    .avail {
+      font-size: 16px;
+      color: grey;
+    }
+  }
+
+}
+
+.courier-price {
+  font-size: 20px;
+  .times {
+    color: $red;
+    padding: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

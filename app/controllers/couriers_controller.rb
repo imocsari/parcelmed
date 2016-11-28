@@ -5,9 +5,7 @@ class CouriersController < ApplicationController
     @pickup_location = params["pickup_location"]
     @destination_location = params["destination_location"]
     @temperature = params["temperature"]
-    if params[:step] == "2" # User is in step 2
-      @couriers = Courier.get_couriers(query_couriers_params)
-    end
+    @couriers = Courier.get_couriers(query_couriers_params)
   end
 
   #def index
