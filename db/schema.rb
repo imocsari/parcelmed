@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161128151204) do
+ActiveRecord::Schema.define(version: 20161128201808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20161128151204) do
     t.string   "destination_country"
     t.string   "pick_up_department"
     t.string   "destination_department"
+    t.float    "weight"
     t.index ["courier_id"], name: "index_bookings_on_courier_id", using: :btree
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
