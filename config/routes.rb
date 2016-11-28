@@ -15,9 +15,7 @@ require "sidekiq/web"
   get '/dashboard', to: 'users#dashboard'
   resources :couriers
   resources :bookings do
-    resources :confirmation, only: [:index] do
-      resources :payment, only: [:index]
-    end
+    resources :payments, only: [:new, :create]
   end
 
   get "/about" => "pages#about"
