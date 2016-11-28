@@ -6,13 +6,14 @@ class ProfileController < ApplicationController
     @user = current_user
   end
 
-  def edit
-    @user = User.find(params[:id])
+  def dashboard_edit
+    @user = current_user
   end
 
   def update
-    @user = User.find(params[:id])
-    @user.update(params[:user])
+    @user = current_user
+    @user.update_attributes(user_params)
+    redirect_to dashboard
   end
 
   # def destroy
@@ -24,7 +25,7 @@ class ProfileController < ApplicationController
 private
 
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find(current_user)
   end
 
   def user_params

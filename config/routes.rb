@@ -13,6 +13,7 @@ require "sidekiq/web"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, except: [:show, :new, :create, :destroy]
   get '/dashboard', to: 'profile#dashboard'
+  get '/settings', to: 'profile#dashboard_edit'
   resources :couriers
   resources :bookings do
     resources :confirmation, only: [:index] do
