@@ -12,7 +12,7 @@ require "sidekiq/web"
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, except: [:show, :new, :create, :destroy]
-  get '/dashboard', to: 'users#dashboard'
+  get '/dashboard', to: 'profile#dashboard'
   resources :couriers
   resources :bookings do
     resources :confirmation, only: [:index] do
