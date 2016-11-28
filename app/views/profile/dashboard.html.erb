@@ -1,38 +1,39 @@
 <%= render 'shared/profile_navbar' %>
-
-<div class="bannercontact">
-  <div class="contactform">
-
 <div class="container">
-    <div class="row">
-        <div class="col-md-2"> </div>
-         <div class="col-md-3">
-         <div class="brand">
-         <h3> Elegant List</h3>
+	<div class="row">
+		<h2 class="text-center"><strong>Profile details</strong></h2>
+        <div class="col-md-12 text-left"><br>
+                <div class=" col-md-12 col-lg-12 ">
+                                <table class="table table-user-information">
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Company name:</strong></td>
+                                            <td><%= @user.company_name %></td>
+                                        </tr>
+                                        <tr >
+                                            <td><strong>Email address:</strong></td>
+                                            <td><%= @user.email %></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Company department:</strong></td>
+                                            <td><%= @user.company_department %></td>
+                                        </tr>
+
+                                        <tr class="table-success">
+                                            <tr>
+                                                <td><strong>Contact Person:</strong></td>
+                                                <td><%= @user.contact_person %></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Contact number:</strong></td>
+                                                <td><%= @user.contact_number %></td>
+                                            </tr>
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
         </div>
-            <ul class="list-group">
-                <li class="list-group-item">User:<%= @user.company_name %></li>
-                <li class="list-group-item"><%= @user.email %></li>
-                <li class="list-group-item"><%= @user.company_department %></li>
-                <li class="list-group-item"><%= @user.contact_person %></li>
-                <li class="list-group-item"><%= @user.contact_number %></li>
-            </ul>
-        </div>
-        <div class="col-md-2"> </div>
-        <div class="col-md-3">
-         <div class="brand">
-         <h3> Elegant List</h3>
-        </div>
-            <ul class="list-group">
-                <li class="list-group-item"> list item one</li>
-                <li class="list-group-item"> list item two </li>
-                <li class="list-group-item"> list item three</li>
-                <li class="list-group-item"> list item four</li>
-                <li class="list-group-item"> list item five</li>
-            </ul>
-        </div>
-        <div class="col-md-2"> </div>
-    </div>
-</div>
+	</div>
 </div>
 </div>
