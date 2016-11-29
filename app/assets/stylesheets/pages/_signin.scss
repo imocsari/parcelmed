@@ -30,6 +30,12 @@ body {
 }
 
 
+.border-form-div {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
 .login {
   position: fixed;
   min-height: 100%;
@@ -41,7 +47,6 @@ body {
   margin-top: -100px; /* Negative half of height. */
   margin-left: -250px; /* Negative half of width. */
 }
-
 
 .login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
 
