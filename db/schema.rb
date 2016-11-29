@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 20161128201808) do
     t.float    "controlled_ambiant_price"
     t.float    "uncontrolled_ambiant_price"
     t.boolean  "frozen_20_compliant",            default: false, null: false
-    t.float    "frozen_20_price"
+    t.float    "fozen_20_price"
     t.string   "photo"
   end
 
