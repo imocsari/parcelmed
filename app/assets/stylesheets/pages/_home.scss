@@ -18,8 +18,13 @@
   border-radius: 12px;
   // border: 2px white solid;
   margin-top: 70px;
+
   .form-body {
     padding: 30px;
+
+    h3 {
+      color: white;
+    }
   }
 }
 
@@ -33,9 +38,7 @@
 
 }
 
-h3 {
-  color: white;
-}
+
 
 .btn {
   background-color: #469ae0;
