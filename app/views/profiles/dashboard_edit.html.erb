@@ -4,17 +4,21 @@
    <div class="profilerow padded">
     <div class="col-md-12 padded " >
      <div class="panel panel-primary center">
-      <div class="panel-heading">
-        <h2>Edit your profile</h2>
+      <div class="panel-heading text-center">
+          <h2>Edit your profile</h2>
           <%= simple_form_for current_user, url: profile_path(current_user) do |f| %>
-            <%= f.input :company_name, class:"padded"%>
+          <div <input class="string optional "
+            name="item[name]"/>
+          </div>
+          </div>
+            <%= f.input :company_name, class:"padded", value:"company_name"%>
+
             <%= f.input :company_address %>
             <%= f.input :company_department %>
             <%= f.input :contact_person %>
             <%= f.input :contact_number %>
-            <%= f.button :submit %>
+            <%= f.button :submit, value:"Update your details", class: "padded"%>
           <% end %>
-      </div>
       </div>
     </div>
   </div>
