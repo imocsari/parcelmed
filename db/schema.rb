@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129102408) do
+ActiveRecord::Schema.define(version: 20161129103014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 20161129102408) do
   create_table "bookings", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "courier_id"
-    t.integer  "status"
     t.integer  "quantity"
     t.boolean  "extra_packaging"
     t.string   "destination_contact_address"
@@ -81,6 +80,9 @@ ActiveRecord::Schema.define(version: 20161129102408) do
     t.string   "pickup_country"
     t.string   "pickup_county"
     t.string   "pickup_department"
+    t.string   "pickup_location"
+    t.string   "destination_location"
+    t.integer  "status",                      default: 0
     t.index ["courier_id"], name: "index_bookings_on_courier_id", using: :btree
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end

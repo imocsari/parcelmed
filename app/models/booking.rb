@@ -4,7 +4,4 @@ class Booking < ApplicationRecord
 
   monetize :amount_pennies
   enum status: [ :pending, :paid ]
-
-
-
 end

@@ -10,8 +10,9 @@ class BookingsController < ApplicationController
   end
 
   def create
-    binding.pry
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    binding.pry
     if @booking.save
       # UserMailer.welcome(booking_params[:email]).deliver_now
       redirect_to booking_path(@booking)
@@ -20,7 +21,7 @@ class BookingsController < ApplicationController
     end
   end
 
-private
+  private
 
   def booking_params
     params.require(:booking).permit(
