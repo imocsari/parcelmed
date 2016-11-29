@@ -1,0 +1,87 @@
+<%= simple_form_for @booking do |b| %>
+<div class="container">
+  <div class="row">
+    <h1 class="text-center">Finish booking your courier service</h1>
+
+      <!-- Collection Address -->
+    <div class="col-sm-6 grid-item-left medium-width-6">
+      <div class="collection">1. Collection Address
+        <%= b.input :pickup_location %>
+        <%= b.input :pickup_postcode %>
+        <%= b.input :pickup_contact_name %>
+        <%= b.input :pickup_contact_phone %>
+        <%= b.input :pickup_contact_email %>
+        <%= b.input :pickup_company_name %>
+        <%= b.input :pickup_department %>
+      </div>
+    </div>
+
+      <!-- Delivery Address -->
+    <div class="col-sm-6 grid-item-right medium-width-6">
+      <div class="collection">2. Delivery Address
+        <%= b.input :destination_location %>
+        <%= b.input :destination_postcode %>
+        <%= b.input :destination_contact_name %>
+        <%= b.input :destination_contact_phone %>
+        <%= b.input :destination_contact_email %>
+        <%= b.input :destination_company_name %>
+        <%= b.input :destination_department %>
+      </div>
+    </div>
+  </div>
+
+    <!-- Additional information -->
+  <div class="row">
+    <div class="col-sm-12 medium-width-6">
+      <div class="collection">3. Additional Information
+        <%= b.input :special_requirements %>
+        <%= b.input :hazardous_material, collection: ["Yes", "No"], as: :radio_buttons %>
+      </div>
+    </div>
+  </div>
+
+    <!-- Terms and Condittions -->
+  <div class="row">
+    <div class="col-sm-12 medium-width-6">
+      <div class="collection">4. Terms &amp; Conditions </br>
+
+        <p><%= b.check_box :terms_and_conditions %>
+          I agree to the <a href="/terms-and-conditions" target="_blank">terms and conditions</a> and <a href="/privacy-policy" target="_blank">privacy policy</a> and confirm that my shipment complies with the <a href="/prohibited-items" class="js-new-window" data-width="465" data-height="550">restricted items list</a>.</p>
+
+          <%= b.button :submit, 'Continue to Payment'  %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Javascript for autocomplete on maps to work -->
+
+<%= content_for(:after_js) do %>
+<!--   <script>
+    $(document).ready(function() {
+      var input_to_pickup_autocomplete = $('#postcode').get(0);
+
+      if (input_to_pickup_autocomplete) {
+        var autocomplete = new google.maps.places.Autocomplete(input_to_pickup_autocomplete, { types: ['geocode'] });
+        google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
+        google.maps.event.addDomListener(input_to_pickup_autocomplete, 'keydown', function(e) {
+          if (e.keyCode == 13) {
+            e.preventDefault(); // Do not submit the form on Enter.
+          }
+        });
+      }
+      });
+
+  </script> -->
+<% end %>
+
+<!-- Page created by Antonio Smith 11/16 -->
+
+
+
+
+
+
+
