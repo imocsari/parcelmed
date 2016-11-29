@@ -2,8 +2,8 @@
 <div class="container">
 	<div class="row">
 		<h2 class="text-center"><strong>Profile details</strong></h2>
-        <div class="col-md-12 text-left"><br>
-                <div class=" col-md-12 col-lg-12 ">
+        <div class="col-md-12 text-justify"><br>
+                <div class=" col-md-12 col-lg-12 padded">
                                 <table class="table table-user-information">
                                     <tbody>
                                         <tr>
@@ -30,6 +30,12 @@
                                             </tr>
 
                                         </tr>
+																				<tr class="table-success">
+																						<tr>
+																								<td><strong>Company address:</strong></td>
+																								<td><%= @user.company_address %></td>
+																						</tr>
+																				</tr>
 
                                     </tbody>
                                 </table>
