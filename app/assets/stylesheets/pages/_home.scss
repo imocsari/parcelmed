@@ -1,6 +1,9 @@
 .banner {
-  min-height: 560px;
+  min-height: 100vh;
   background-size: cover;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .title {
@@ -55,7 +58,7 @@
 
 
 .wrapper {
-  min-height: 100vh;
+  min-height: 10vh;
   padding-left: 60px;
   padding-right: 60px;
 }
