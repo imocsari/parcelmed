@@ -12,16 +12,9 @@ class ProfileController < ApplicationController
 
   def update
     @user = current_user
-    @user.update_attributes(user_params)
+    @user.update_attribute(user_params)
     redirect_to dashboard
   end
-
-  # def destroy
-  #   @user = User.find(params[:id])
-  #   @user.destroy
-  #   redirect_to roots_path
-  # end
-
 private
 
   def set_user
