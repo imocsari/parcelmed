@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129122130) do
+ActiveRecord::Schema.define(version: 20161129155751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,8 +102,19 @@ ActiveRecord::Schema.define(version: 20161129122130) do
     t.float    "controlled_ambiant_price"
     t.float    "uncontrolled_ambiant_price"
     t.boolean  "frozen_20_compliant",            default: false, null: false
-    t.float    "frozen_20_price"
+    t.float    "fozen_20_price"
     t.string   "photo"
+  end
+
+  create_table "invoices", force: :cascade do |t|
+    t.string   "invoice_no"
+    t.string   "payment_terms"
+    t.string   "date_due"
+    t.string   "sub_total"
+    t.string   "vat"
+    t.string   "total"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "providers", force: :cascade do |t|
