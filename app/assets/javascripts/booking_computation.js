@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
   $("#quantity").on("keyup", function(){
     var quantity = $(this).val();
     var weight = $("#weight").val();

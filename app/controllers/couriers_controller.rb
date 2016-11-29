@@ -2,10 +2,8 @@ class CouriersController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
-    @pickup_location = params["pickup_location"]
-    @destination_location = params["destination_location"]
-    @temperature = params["temperature"]
     @couriers = Courier.get_couriers(query_couriers_params)
+    @booking = Booking.new
   end
 
   #def index

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161128201808) do
+ActiveRecord::Schema.define(version: 20161129102408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,13 +50,9 @@ ActiveRecord::Schema.define(version: 20161128201808) do
     t.integer  "status"
     t.integer  "quantity"
     t.boolean  "extra_packaging"
-    t.string   "pick_up_contact_address"
     t.string   "destination_contact_address"
-    t.string   "pick_up_contact_name"
     t.string   "destination_contact_name"
-    t.string   "pick_up_contact_email"
     t.string   "destination_contact_email"
-    t.string   "pick_up_contact_phone"
     t.string   "destination_contact_phone"
     t.string   "special_requirements"
     t.boolean  "hazardous_material"
@@ -64,19 +60,27 @@ ActiveRecord::Schema.define(version: 20161128201808) do
     t.datetime "updated_at",                              null: false
     t.string   "terms_and_conditions"
     t.integer  "amount_pennies",              default: 0, null: false
-    t.string   "pick_up_postcode"
     t.string   "destination_postcode"
-    t.string   "pick_up_company_name"
     t.string   "destination_company_name"
-    t.string   "pick_up_town"
-    t.string   "pick_up_county"
-    t.string   "pick_up_country"
     t.string   "destination_town"
     t.string   "destination_county"
     t.string   "destination_country"
-    t.string   "pick_up_department"
     t.string   "destination_department"
     t.float    "weight"
+    t.string   "temperature"
+    t.string   "material_type"
+    t.boolean  "data_logger"
+    t.boolean  "shipping_container"
+    t.string   "pickup_contact_address"
+    t.string   "pickup_postcode"
+    t.string   "pickup_contact_name"
+    t.string   "pickup_contact_email"
+    t.string   "pickup_contact_phone"
+    t.string   "pickup_company_name"
+    t.string   "pickup_town"
+    t.string   "pickup_country"
+    t.string   "pickup_county"
+    t.string   "pickup_department"
     t.index ["courier_id"], name: "index_bookings_on_courier_id", using: :btree
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
