@@ -36,7 +36,7 @@ Booking.create!(quantity: 5, courier: force_courier, user: vador)
 marken = Courier.new({
   name: "Marken",
   description: "Cold chain transportation",
-  tomorrow: true,
+  tomorrow: false,
   same_day: true,
   vapor_compliant: true,
   ultra_low_compliant: true,
@@ -50,6 +50,7 @@ marken = Courier.new({
   ultra_low_price: 14,
   frozen_40_price: 13,
   frozen_30_price: 12,
+  frozen_20_price: 12,
   refrigerated_price: 11,
   controlled_ambiant_price: 10,
   uncontrolled_ambiant_price: 0
@@ -61,7 +62,7 @@ ups = Courier.new({
   name: "UPS",
   description: "Cold chain transportation",
   tomorrow: true,
-  same_day: true,
+  same_day: false,
   vapor_compliant: false,
   ultra_low_compliant: false,
   frozen_40_compliant: true,
@@ -73,6 +74,7 @@ ups = Courier.new({
   vapor_price: 19,
   ultra_low_price: 18,
   frozen_40_price: 17,
+  frozen_20_price: 11,
   frozen_30_price: 12,
   refrigerated_price: 11,
   controlled_ambiant_price: 10,
@@ -99,6 +101,7 @@ ubs = Courier.new({
   ultra_low_price: 28,
   frozen_40_price: 13,
   frozen_30_price: 15,
+  frozen_20_price: 10,
   refrigerated_price: 11,
   controlled_ambiant_price: 10,
   uncontrolled_ambiant_price: 0

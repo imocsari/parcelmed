@@ -6,24 +6,48 @@ class Courier < ApplicationRecord
 
   def self.get_couriers(query_couriers_params)
     case query_couriers_params[:temperature]
-    when "Vapour Phase (-196) LN2"
+    when "vapour"
       Courier.where(vapor_compliant: true)
-    when "Ultra Low (-80)"
+    when "ultra"
       Courier.where(ultra_low_compliant: true)
-    when "Frozen(-40)"
+    when "frozen_40"
       Courier.where(frozen_40_compliant: true)
-    when "Frozen(-30)"
+    when "frozen_30"
       Courier.where(frozen_30_compliant: true)
-    when "Frozen(-20)"
+    when "frozen_20"
       Courier.where(frozen_20_compliant: true)
-    when "Refigerated (+2-8)"
+    when "refrigerated"
       Courier.where(refrigerated_compliant: true)
-    when "Controlled Ambient(+15, +25)"
+    when "controlled_ambiant"
       Courier.where(controlled_ambiant_compliant: true)
-    when "Uncontrolled Ambient"
+    when "uncontrolled_ambiant Ambient"
       Courier.where(uncontrolled_ambiant_compliant: true)
     end
   end
+
+
+  def price_for(temperature)
+    case temperature
+    when "vapour"
+      vapor_price
+    when "ultra"
+      ultra_low_price
+    when "frozen_40"
+      frozen_40_price
+    when "frozen_30"
+      frozen_30_price
+    when "frozen_20"
+      frozen_20_price
+    when "refrigerated"
+      refrigerated_price
+    when "controlled_ambiant"
+      controlled_ambiant_price
+    when "uncontrolled_ambiant Ambient"
+      uncontrolled_ambiant_price
+    end
+  end
+
+
   #def self.get_from_api(provider, query_params)
   # require 'uri'
   # require 'net/http'

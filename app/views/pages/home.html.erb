@@ -2,49 +2,47 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-8">
-        <h1 class="title">UK's first comparison website of couriers for cold chain transportation</h1>
+        <h1 class="title"><strong>UK's first</strong> comparison website for cold chain transportation</h1>
       </div>
       <div class="col-xs-12 col-md-4">
-      <div class ="instant-quote-box">
-        <div class="row">
-          <div class="form-box">
-          <h3 align="center">Get an Instant Quote</h3>
-            <form action="/couriers" class="form-horizontal">
+        <div class="form-box">
+          <div class="form-body">
+            <h3 align="center">Get an Instant Quote</h3>
+            <form action="/couriers">
               <input type="hidden" name="step" value=1>
-              <div class="home-page">
+              <div class="form-group">
                 <label for="pickup_location" class="control-label-1">Pick Up</label><br>
-                <input name="pickup_location" id="pickup_location" placeholder="i.e. Se59lz">
+                <input name="pickup_location" class="form-control" id="pickup_location" placeholder="12 Elder Street London">
               </div>
-              <div class="home-page">
+              <div class="form-group">
                 <label for="destination_location" class="control-label-1">Destination</label>
-                <input name="destination_location" id="destination_location" placeholder="i.e. Sw170eR">
+                <input name="destination_location" class="form-control" id="destination_location" placeholder="Google Campus, London">
               </div>
-              <div class="home-page">
+              <div class="form-group">
                 <label for="temperatureform" class="control-label-1">Temperature</label>
-                <select class="home-page" name="temperature">
-                  <option>Vapour Phase (-196) LN2</option>
-                  <option>Ultra Low (-80)</option>
-                  <option>Frozen (-40)</option>
-                  <option>Frozen (-30)</option>
-                  <option>Frozen (-20)</option>
-                  <option>Refigerated (+2-+8)</option>
-                  <option>Controlled Ambient (+15-+25)</option>
-                  <option>Uncontrolled Ambient</option>
+                <select class="form-control" name="temperature">
+                  <option value="vapour">Vapour Phase (-196) LN2</option>
+                  <option value="ultra">Ultra Low (-80)</option>
+                  <option value="frozen_40">Frozen (-40)</option>
+                  <option value="frozen_30">Frozen (-30)</option>
+                  <option value="frozen_20">Frozen (-20)</option>
+                  <option value="refrigerated">Refigerated (+2-+8)</option>
+                  <option value="controlled_ambiant">Controlled Ambient (+15-+25)</option>
+                  <option value="uncontrolled_ambiant">Uncontrolled Ambient</option>
                 </select>
               </div>
-              <div style="text-align:center;">
-                <input type="submit" class="btn" value="Get Quote and Book">
-              </div>
-            </form>
           </div>
+            <div style="text-align:center;">
+              <input type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; border-radius: 0 0 8px 8px" value="Check available couriers">
+            </div>
+          </form>
         </div>
-      </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class ="couriers">
+<div class="couriers">
   <div class="container">
     <div class="row">
      <div class="col-md-2 col-md-offset-1">
@@ -67,21 +65,21 @@
 </div>
 
 
-<div class="wrapper-grey1 padded">
+<div class="wrapper-grey1">
   <div class="container text-center padded features">
-  <h1>As easy as...</h1>
+  <h2>As easy as...</h2>
     <div class="row">
       <div class="col-xs-9 col-sm-4 col-md-4">
         <img src="biology.png" alt="">
-        <h2>1. Fill in your Specifications </h2>
+        <p><span>1</span> Define your package</p>
       </div>
       <div class="col-xs-9 col-sm-4 col-md-4">
         <img src="pills.png" alt="">
-        <h2>2. Select your preferred courier</h2>
+        <p><span>2</span> Find best courier</p>
       </div>
       <div class="col-xs-9 col-sm-4 col-md-4">
         <img src="heart.png" alt="">
-        <h2>3. Book your chosen courier, we do the rest</h2>
+        <p><span>3</span> Book it</p>
       </div>
     </div>
   </div>
@@ -89,9 +87,10 @@
 
 <div>
   <section id="carousel">
+    <h2 class="text-center">What they say...</h2>
     <div class="container-carousel">
       <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-4 col-md-offset-4">
                   <div class="quote"><i class="fa fa-quote-left fa-4x"></i></div>
           <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="3000">
             <!-- Carousel indicators -->

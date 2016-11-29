@@ -6,31 +6,33 @@
       <!-- Collection Address -->
     <div class="col-sm-6 grid-item-left medium-width-6">
       <div class="collection">1. Collection Address
-        <%= simple_form_for @user do |u| %>
-        <%= u.input :postcode, input_html: { id: 'postcode'}, :placeholder => 'Start typing a place name...' %>
-        <%= u.button :button, 'Find Address' %>
-        <%= u.input :contact_person, required: true %>
-        <%= u.input :email, required: true %>
-        <%= u.input :company_name, required: true%>
-        <%= u.input :company_address, required: true %>
-        <%= u.input :town, required: true %>
-        <%= u.input :county, required: true%>
-        <%= u.input :country, as: :string %>
+        <%= simple_form_for @booking do |b| %>
+        <%= b.input :courier_id, as: :hidden %>
+        <%= b.input :status, as: :hidden %>
+        <%= b.input :quantity, as: :hidden %>
+        <%= b.input :weight, as: :hidden %>
+
+
+        <%= b.input :pick_up_contact_address %>
+        <%= b.button :button, 'Find Address' %>
+        <%= b.input :pick_up_contact_name %>
+        <%= b.input :pick_up_contact_email %>
+        <%= b.input :pick_up_company_name%>
+        <%= b.input :pick_up_department%>
+        <%= b.input :pick_up_postcode, input_html: { id: 'postcode'}, :placeholder => 'Start typing a place name...' %>
       </div>
     </div>
 
       <!-- Delivery Address -->
     <div class="col-sm-6 grid-item-right medium-width-6">
       <div class="collection">2. Delivery Address
-        <%= u.input :postcode, input_html: { id: 'postcode'}, :placeholder => 'Start typing a place name...' %>
-        <%= u.button :button, 'Find Address' %>
-        <%= u.input :contact_person, required: true %>
-        <%= u.input :email, required: true %>
-        <%= u.input :company_name, required: true %>
-        <%= u.input :company_address, required: true %>
-        <%= u.input :town, required: true %>
-        <%= u.input :county, required: true %>
-        <%= u.input :country, as: :string %>
+        <%= b.input :destination_contact_address %>
+        <%= b.button :button, 'Find Address' %>
+        <%= b.input :destination_contact_name %>
+        <%= b.input :destination_contact_email %>
+        <%= b.input :destination_company_name%>
+        <%= b.input :destination_department%>
+        <%= b.input :destination_postcode, input_html: { id: 'postcode'}, :placeholder => 'Start typing a place name...' %>
       </div>
     </div>
   </div>
@@ -39,7 +41,6 @@
   <div class="row">
     <div class="col-sm-12 medium-width-6">
       <div class="collection">3. Additional Information
-        <%= u.simple_fields_for :booking do |b| %>
         <%= b.input :special_requirements %>
         <%= b.input :hazardous_material, collection: ["Yes", "No"] %>
       </div>
@@ -54,8 +55,12 @@
         <p><%= b.check_box :terms_and_conditions %>
           I agree to the <a href="/terms-and-conditions" target="_blank">terms and conditions</a> and <a href="/privacy-policy" target="_blank">privacy policy</a> and confirm that my shipment complies with the <a href="/prohibited-items" class="js-new-window" data-width="465" data-height="550">restricted items list</a>. <a href="/terms-and-conditions" target="_blank">terms and conditions</a><a href="/privacy-policy" target="_blank">privacy policy</a></p>
 
-          <% end %>
-          <%= u.button :submit, 'Confirm Booking'  %>
+          <%= b.input :quantity, :as => :hidden, :input_html => { :value =>  @quantity } %>
+          <% b.input :dimension, :as => :hidden, :input_html => { :value =>  @dimension } %>
+          <% b.input :weight, :as => :hidden, :input_html => { :value =>  @weight } %>
+          <% b.input :material_type, :as => :hidden, :input_html => { :value =>  @material_type } %>
+
+          <%= b.button :submit, 'Confirm Booking'  %>
           <% end %>
         </div>
       </div>
