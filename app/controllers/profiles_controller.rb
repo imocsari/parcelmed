@@ -1,4 +1,4 @@
-class ProfileController < ApplicationController
+class ProfilesController < ApplicationController
   before_action :authenticate_user!, only: :dashboard
   before_action :set_user, except: :dashboard
 
@@ -12,8 +12,8 @@ class ProfileController < ApplicationController
 
   def update
     @user = current_user
-    @user.update_attribute(user_params)
-    redirect_to dashboard
+    @user.update(user_params)
+    redirect_to dashboard_path
   end
 private
 

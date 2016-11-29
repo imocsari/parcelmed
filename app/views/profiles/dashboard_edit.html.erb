@@ -1,13 +1,12 @@
 
   <%= render 'shared/profile_navbar' %>
-<div class="container">
-
+<div class="profilecontainer">
    <div class="profilerow padded">
     <div class="col-md-12 padded " >
      <div class="panel panel-primary center">
       <div class="panel-heading">
         <h2>Edit your profile</h2>
-          <%= simple_form_for @user do |f| %>
+          <%= simple_form_for current_user, url: profile_path(current_user) do |f| %>
             <%= f.input :company_name, class:"padded"%>
             <%= f.input :company_address %>
             <%= f.input :company_department %>

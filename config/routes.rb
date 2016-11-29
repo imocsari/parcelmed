@@ -11,10 +11,11 @@ require "sidekiq/web"
   devise_for :users
   root to: 'pages#home'
   resources :users, except: [:show, :new, :create, :destroy]
-  get '/dashboard', to: 'profile#dashboard'
-  get '/usersettings', to: 'profile#dashboard_edit'
-  get '/userpayments', to: 'profile#dashboard_payment'
-  get '/userbookings', to: 'profile#dashboard_booking'
+  get '/dashboard', to: 'profiles#dashboard'
+  get '/usersettings', to: 'profiles#dashboard_edit'
+  get '/userpayments', to: 'profiles#dashboard_payment'
+  get '/userbookings', to: 'profiles#dashboard_booking'
+  resources :profiles, only: [:update]
   resources :couriers
   resources :bookings do
     resources :payments, only: [:new, :create]

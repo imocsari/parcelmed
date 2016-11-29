@@ -4,7 +4,13 @@
     margin-right: auto;
     margin-left: auto;
     position: relative;
-    padding-top: 100px;
-    padding-left: 300px;
-    padding-right: 300px;
+}
+
+.profilecontainer {
+  max-width: 600px;
+  padding: auto;
+  padding-bottom: 800px;
+  padding-top: 100px;
+  margin: auto;
+  background-color: white;
 }
